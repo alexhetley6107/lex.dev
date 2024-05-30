@@ -29,8 +29,8 @@ export const LogoTitle = () => {
         },
       }}
     >
-      {letters.map((l) => (
-        <span>{l}</span>
+      {letters.map((l, i) => (
+        <span key={i}>{l}</span>
       ))}
     </Typography>
   );
