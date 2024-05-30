@@ -54,7 +54,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               }),
         },
         typography: {
-          fontFamily: 'Montserrat',
+          fontFamily: 'Montserrat, sans-serif',
         },
       }),
     [mode]

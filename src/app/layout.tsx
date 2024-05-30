@@ -1,12 +1,19 @@
 import { ThemeProvider } from '@/providers';
 import { Header } from '@/widgets';
 import type { Metadata } from 'next';
-import Head from 'next/head';
+import { Montserrat } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'lex.dev',
   description: 'Portfolio',
 };
+
+const montserrat = Montserrat({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Arial', 'sans-serif'],
+});
 
 export default function RootLayout({
   children,
@@ -15,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={montserrat.className}>
         <ThemeProvider>
           <Header />
           {children}
