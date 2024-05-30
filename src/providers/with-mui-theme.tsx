@@ -1,29 +1,29 @@
 'use client';
 import React, { FC, PropsWithChildren, useState, useEffect } from 'react';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
-import { ColorModeContext } from '@/shared/lib';
+import { ColorModeContext, THEME_MODE } from '@/shared/lib';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<THEME_MODE>(THEME_MODE.LIGHT);
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('themeMode') as 'light' | 'dark';
+    const savedMode = localStorage.getItem('themeMode') as THEME_MODE;
 
-    setMode(savedMode ?? 'light');
+    setMode(savedMode ?? THEME_MODE.LIGHT);
   }, []);
 
   useEffect(() => {
     localStorage.setItem('themeMode', mode as string);
   }, [mode]);
 
-  const toggleColorMode = () => setMode(mode === 'light' ? 'dark' : 'light');
+  const toggleColorMode = () => setMode(mode === THEME_MODE.LIGHT ? THEME_MODE.DARK : THEME_MODE.LIGHT);
 
   const theme = React.useMemo(
     () =>
       createTheme({
         palette: {
           mode,
-          ...(mode === 'light'
+          ...(mode === THEME_MODE.LIGHT
             ? {
                 primary: {
                   main: 'rgba(52, 112, 255, 1)',
@@ -54,7 +54,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               }),
         },
         typography: {
-          // fontFamily: 'Montserrat',
+          fontFamily: 'Montserrat',
         },
       }),
     [mode]
