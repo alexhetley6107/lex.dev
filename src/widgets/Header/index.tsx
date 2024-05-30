@@ -6,7 +6,7 @@ import { LogoTitle } from '@/shared/ui';
 
 export const Header: FC = () => {
   return (
-    <AppBar sx={{ height: HEADER_HEIGHT, bgcolor: 'secondary.light', boxShadow: 'none', p: '10px' }}>
+    <AppBar sx={{ height: HEADER_HEIGHT, zIndex: 990, bgcolor: 'secondary.light', boxShadow: 'none', p: '10px' }}>
       <LogoTitle />
     </AppBar>
   );

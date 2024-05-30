@@ -14,7 +14,6 @@ export const LogoTitle = () => {
       variant="h5"
       sx={{
         fontWeight: 700,
-        cursor: 'pointer',
         span: {
           color: 'secondary.dark',
           transition: 'all 0.3s',

@@ -56,6 +56,15 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         typography: {
           fontFamily: 'Montserrat, sans-serif',
         },
+        components: {
+          MuiCssBaseline: {
+            styleOverrides: {
+              body: {
+                cursor: 'none',
+              },
+            },
+          },
+        },
       }),
     [mode]
   );
