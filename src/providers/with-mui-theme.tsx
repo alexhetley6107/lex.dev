@@ -60,7 +60,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
           MuiCssBaseline: {
             styleOverrides: {
               body: {
-                cursor: 'none',
+                // cursor: 'none',
               },
             },
           },
