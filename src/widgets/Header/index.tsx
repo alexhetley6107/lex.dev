@@ -1,7 +1,11 @@
+'use client';
 import React, { FC } from 'react';
 import AppBar from '@mui/material/AppBar';
-import { HEADER_HEIGHT, ROUTE } from '@/shared/lib';
+import { HEADER_HEIGHT, ROUTE, THEME_MODE, useToggleColorMode } from '@/shared/lib';
 import { LinkButton, LogoTitle, Row } from '@/shared/ui';
+import { IconButton, useTheme } from '@mui/material';
+import MoonIcon from '@mui/icons-material/DarkMode';
+import SunIcon from '@mui/icons-material/WbSunny';
 
 const menuLinks = [
   { title: 'Home', href: ROUTE.HOME },
@@ -11,6 +15,11 @@ const menuLinks = [
 ];
 
 export const Header: FC = () => {
+  const toggleTheme = useToggleColorMode();
+  const theme = useTheme();
+
+  const isLight = theme.palette.mode === THEME_MODE.LIGHT;
+
   return (
     <AppBar
       sx={{
@@ -26,11 +35,16 @@ export const Header: FC = () => {
         <LogoTitle />
 
         <Row>
-          {menuLinks.map(({ title, href }) => (
-            <LinkButton href={href} sx={{ ml: 3 }}>
-              {title}
-            </LinkButton>
-          ))}
+          <Row>
+            {menuLinks.map(({ title, href }) => (
+              <LinkButton href={href} sx={{ mr: 3 }}>
+                {title}
+              </LinkButton>
+            ))}
+          </Row>
+          <IconButton onClick={toggleTheme}>
+            {isLight ? <SunIcon sx={{ color: 'secondary.dark' }} /> : <MoonIcon />}
+          </IconButton>
         </Row>
       </Row>
     </AppBar>

@@ -8,15 +8,18 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const savedMode = localStorage.getItem('themeMode') as THEME_MODE;
-
-    setMode(savedMode ?? THEME_MODE.LIGHT);
+    if (savedMode) {
+      setMode(savedMode);
+    } else {
+      localStorage.setItem('themeMode', mode as string);
+    }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('themeMode', mode as string);
-  }, [mode]);
-
-  const toggleColorMode = () => setMode(mode === THEME_MODE.LIGHT ? THEME_MODE.DARK : THEME_MODE.LIGHT);
+  const toggleColorMode = () => {
+    const newMode = mode === THEME_MODE.LIGHT ? THEME_MODE.DARK : THEME_MODE.LIGHT;
+    setMode(newMode);
+    localStorage.setItem('themeMode', newMode as string);
+  };
 
   const theme = React.useMemo(
     () =>
@@ -59,9 +62,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         components: {
           MuiCssBaseline: {
             styleOverrides: {
-              body: {
-                cursor: 'none',
-              },
+              body: {},
             },
           },
         },

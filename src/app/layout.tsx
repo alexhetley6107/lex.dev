@@ -27,7 +27,6 @@ export default function RootLayout({
         <ThemeProvider>
           <ScreenBox>
             <Header />
-            <RoundCursor />
             {children}
           </ScreenBox>
         </ThemeProvider>

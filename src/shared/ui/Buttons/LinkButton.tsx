@@ -11,8 +11,7 @@ interface Props extends ButtonProps {
 
 export const LinkButton: FC<Props> = ({ children, href, ...props }) => {
   const pathname = usePathname();
-  const isHighLighted = href !== ROUTE.HOME && href === pathname;
-  console.log({ pathname });
+  const isHighLighted = href === pathname;
 
   return (
     <Link href={href}>
@@ -30,7 +29,6 @@ export const LinkButton: FC<Props> = ({ children, href, ...props }) => {
 
           '@media (hover: hover)': {
             '&:hover': {
-              // bgcolor: 'secondary.dark',
               bgcolor: isHighLighted ? 'primary.main' : 'secondary.dark',
 
               color: 'secondary.light',
