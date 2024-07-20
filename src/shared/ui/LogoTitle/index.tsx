@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import { ROUTE } from '@/shared/lib';
+import { ROUTE } from '@/shared';
 import Link from 'next/link';
 import { Box } from '@mui/material';
 
@@ -15,7 +15,6 @@ export const LogoTitle = () => {
           sx={{
             cursor: 'pointer',
             fontWeight: 700,
-
             span: {
               color: 'secondary.dark',
               transition: 'all 0.3s',

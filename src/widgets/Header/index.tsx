@@ -1,7 +1,7 @@
 'use client';
 import React, { FC } from 'react';
 import AppBar from '@mui/material/AppBar';
-import { HEADER_HEIGHT, ROUTE, THEME_MODE, useToggleColorMode } from '@/shared/lib';
+import { HEADER_HEIGHT, ROUTE, THEME_MODE, useToggleColorMode } from '@/shared';
 import { LinkButton, LogoTitle, Row } from '@/shared/ui';
 import { IconButton, useTheme } from '@mui/material';
 import MoonIcon from '@mui/icons-material/DarkMode';

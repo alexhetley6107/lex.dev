@@ -5,9 +5,11 @@ export default function Home() {
   return (
     <>
       <main style={{ padding: '30px' }}>
-        <Typography variant="h1" color="primary" sx={{}}>
-          Home
-        </Typography>
+        {[...new Array(30)].map((_, i) => (
+          <Typography key={i} variant="h1" color="primary" sx={{}}>
+            Home
+          </Typography>
+        ))}
 
         <Button>Contact</Button>
       </main>

@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@/providers';
-import { RoundCursor, ScreenBox } from '@/shared/ui';
 import { Header } from '@/widgets';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
@@ -25,10 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <ThemeProvider>
-          <ScreenBox>
-            <Header />
-            {children}
-          </ScreenBox>
+          <Header />
+          {children}
         </ThemeProvider>
       </body>
     </html>

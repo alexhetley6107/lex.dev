@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, PropsWithChildren, useState, useEffect } from 'react';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
-import { ColorModeContext, THEME_MODE } from '@/shared/lib';
+import { ColorModeContext, THEME_MODE } from '@/shared';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<THEME_MODE>(THEME_MODE.LIGHT);
