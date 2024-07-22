@@ -1,52 +1,48 @@
 'use client';
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
-import { HEADER_HEIGHT, ROUTE, THEME_MODE, useToggleColorMode } from '@/shared';
-import { LinkButton, LogoTitle, Row } from '@/shared/ui';
-import { IconButton, useTheme } from '@mui/material';
-import MoonIcon from '@mui/icons-material/DarkMode';
-import SunIcon from '@mui/icons-material/WbSunny';
-
-const menuLinks = [
-  { title: 'Home', href: ROUTE.HOME },
-  { title: 'About', href: ROUTE.ABOUT },
-  { title: 'Projects', href: ROUTE.PROJECTS },
-  { title: 'Contacts', href: ROUTE.CONTACTS },
-];
+import { Container, LogoTitle, Row } from '@/shared/ui';
+import { Paper } from '@mui/material';
+import { Menu } from './Menu';
+import { Toggler } from './Toggler';
 
 export const Header: FC = () => {
-  const toggleTheme = useToggleColorMode();
-  const theme = useTheme();
+  const [isTop, setIsTop] = useState(true);
 
-  const isLight = theme.palette.mode === THEME_MODE.LIGHT;
+  const setHeaderHeight = () => {
+    setIsTop(0 === window.scrollY ? true : false);
+    console.log({ scrollY: window.scrollY });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', setHeaderHeight);
+    return () => {
+      window.removeEventListener('scroll', setHeaderHeight);
+    };
+  }, []);
 
   return (
     <AppBar
+      position="sticky"
+      elevation={5}
       sx={{
-        height: HEADER_HEIGHT,
         zIndex: 990,
         bgcolor: 'secondary.light',
         boxShadow: 'none',
-        p: '10px',
         backgroundImage: 'none',
+        height: isTop ? '70px' : '50px',
+        transition: 'all 0.3s',
       }}
     >
-      <Row>
-        <LogoTitle />
-
-        <Row>
-          <Row>
-            {menuLinks.map(({ title, href }) => (
-              <LinkButton href={href} sx={{ mr: 3 }}>
-                {title}
-              </LinkButton>
-            ))}
+      <Paper elevation={isTop ? 0 : 3} sx={{ borderRadius: 0, height: '100%' }}>
+        <Container sx={{ height: '100%' }}>
+          <Row sx={{ height: '100%' }}>
+            <LogoTitle />
+            <Menu />
+            <Toggler />
           </Row>
-          <IconButton onClick={toggleTheme}>
-            {isLight ? <SunIcon sx={{ color: 'secondary.dark' }} /> : <MoonIcon />}
-          </IconButton>
-        </Row>
-      </Row>
+        </Container>
+      </Paper>
     </AppBar>
   );
 };
