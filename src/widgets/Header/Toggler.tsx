@@ -1,6 +1,6 @@
 import React from 'react';
-import { THEME_MODE, useToggleColorMode } from '@/shared';
-import { IconButton, useTheme } from '@mui/material';
+import { Row, THEME_MODE, useToggleColorMode } from '@/shared';
+import { Box, Button, Paper, useTheme } from '@mui/material';
 import MoonIcon from '@mui/icons-material/DarkMode';
 import SunIcon from '@mui/icons-material/WbSunny';
 
@@ -10,8 +10,46 @@ export const Toggler = () => {
 
   const isLight = theme.palette.mode === THEME_MODE.LIGHT;
   return (
-    <IconButton onClick={toggleTheme}>
-      {isLight ? <SunIcon sx={{ color: 'secondary.dark' }} /> : <MoonIcon />}
-    </IconButton>
+    <Button
+      onClick={toggleTheme}
+      sx={{
+        borderRadius: '100px',
+        p: 0,
+        '&:focus': {
+          outline: `2px solid ${theme.palette.primary.main}`,
+        },
+      }}
+    >
+      <Paper sx={{ width: '80px', borderRadius: '100px' }}>
+        <Row sx={{ position: 'relative', height: '100%', borderRadius: '100px', p: '10px' }}>
+          <SunIcon
+            sx={{
+              color: 'white',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          />
+          <MoonIcon
+            sx={{
+              position: 'relative',
+              zIndex: 1,
+            }}
+          />
+          <Box
+            sx={{
+              position: 'absolute',
+              width: '36px',
+              height: '36px',
+              borderRadius: '100px',
+              bgcolor: 'primary.main',
+              top: '4px',
+              left: isLight ? '4px' : '40px',
+              zIndex: 0,
+              transition: 'all 0.3s',
+            }}
+          />
+        </Row>
+      </Paper>
+    </Button>
   );
 };
