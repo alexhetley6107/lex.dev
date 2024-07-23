@@ -4,13 +4,14 @@ import AppBar from '@mui/material/AppBar';
 import { Container, LogoTitle, Row } from '@/shared/ui';
 import { Menu } from './Menu';
 import { Toggler } from './Toggler';
+import { Burger } from '../../shared/ui';
 
 export const Header: FC = () => {
   const [isTop, setIsTop] = useState(true);
+  const [isMenu, setIsMenu] = useState(true);
 
-  const setHeaderHeight = () => {
-    setIsTop(0 === window.scrollY ? true : false);
-  };
+  const setHeaderHeight = () => setIsTop(0 === window.scrollY ? true : false);
+  const onOpenMenu = () => setIsMenu((prev) => !prev);
 
   useEffect(() => {
     window.addEventListener('scroll', setHeaderHeight);
@@ -34,7 +35,9 @@ export const Header: FC = () => {
       <Container sx={{ height: '100%' }}>
         <Row sx={{ height: '100%' }}>
           <LogoTitle />
-          <Menu />
+          {/* <Menu /> */}
+
+          <Burger open={isMenu} onClick={onOpenMenu} />
           <Toggler />
         </Row>
       </Container>
