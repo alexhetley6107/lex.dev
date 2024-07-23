@@ -34,8 +34,8 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
                 secondary: {
                   main: 'rgba(62, 62, 62, 1)',
-                  dark: 'rgba(10, 10, 10, 1)',
-                  light: 'rgba(255, 255, 255, 1)',
+                  dark: 'rgba(25, 24, 32, 1)',
+                  light: 'rgba(236, 236, 236, 1)',
                 },
                 error: {
                   main: '#c9473f',
@@ -48,8 +48,8 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
                 secondary: {
                   main: 'rgba(62, 62, 62, 1)',
-                  dark: 'rgba(255, 255, 255, 1)',
-                  light: 'rgba(10, 10, 10, 1)',
+                  dark: 'rgba(235, 235, 235, 1)',
+                  light: 'rgba(25, 24, 32, 1)',
                 },
                 error: {
                   main: '#c9473f',

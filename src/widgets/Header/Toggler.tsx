@@ -20,7 +20,7 @@ export const Toggler = () => {
         },
       }}
     >
-      <Paper sx={{ width: '80px', borderRadius: '100px' }}>
+      <Paper sx={{ width: '80px', borderRadius: '100px', bgcolor: 'secondary.light' }}>
         <Row sx={{ position: 'relative', height: '100%', borderRadius: '100px', p: '10px' }}>
           <SunIcon
             sx={{
