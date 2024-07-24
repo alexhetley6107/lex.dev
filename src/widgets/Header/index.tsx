@@ -4,14 +4,17 @@ import AppBar from '@mui/material/AppBar';
 import { Container, LogoTitle, Row } from '@/shared/ui';
 import { Menu } from './Menu';
 import { Toggler } from './Toggler';
-import { Burger } from '../../shared/ui';
+import { Burger } from './Burger';
+import { useMediaQuery } from '@mui/material';
+import { Drawer } from './Drawer';
 
 export const Header: FC = () => {
   const [isTop, setIsTop] = useState(true);
   const [isMenu, setIsMenu] = useState(true);
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   const setHeaderHeight = () => setIsTop(0 === window.scrollY ? true : false);
-  const onOpenMenu = () => setIsMenu((prev) => !prev);
+  const onToggleMenu = () => setIsMenu((prev) => !prev);
 
   useEffect(() => {
     window.addEventListener('scroll', setHeaderHeight);
@@ -21,26 +24,30 @@ export const Header: FC = () => {
   }, []);
 
   return (
-    <AppBar
-      position="sticky"
-      elevation={isTop ? 0 : 3}
-      sx={{
-        zIndex: 990,
-        bgcolor: 'secondary.light',
-        height: isTop ? '70px' : '50px',
-        transition: 'all 0.3s',
-        backgroundImage: 'none !important',
-      }}
-    >
-      <Container sx={{ height: '100%' }}>
-        <Row sx={{ height: '100%' }}>
-          <LogoTitle />
-          {/* <Menu /> */}
+    <>
+      <AppBar
+        position="sticky"
+        elevation={isTop ? 0 : 3}
+        sx={{
+          zIndex: 10,
+          bgcolor: 'secondary.light',
+          height: isTop ? '70px' : '50px',
+          transition: 'all 0.3s',
+          backgroundImage: 'none !important',
+        }}
+      >
+        <Container sx={{ height: '100%' }}>
+          <Row sx={{ height: '100%' }}>
+            <LogoTitle />
+            {!isMobile && <Menu />}
 
-          <Burger open={isMenu} onClick={onOpenMenu} />
-          <Toggler />
-        </Row>
-      </Container>
-    </AppBar>
+            <Toggler margin={isMobile ? '40px' : '0'} />
+          </Row>
+        </Container>
+
+        <Drawer open={isMenu} onClose={onToggleMenu} />
+      </AppBar>
+      {isMobile && <Burger open={isMenu} isTop={isTop} onClick={onToggleMenu} />}
+    </>
   );
 };
