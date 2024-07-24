@@ -10,8 +10,8 @@ import { Drawer } from './Drawer';
 
 export const Header: FC = () => {
   const [isTop, setIsTop] = useState(true);
-  const [isMenu, setIsMenu] = useState(true);
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const [isMenu, setIsMenu] = useState(false);
+  const isMobile = useMediaQuery('(max-width:730px)');
 
   const setHeaderHeight = () => setIsTop(0 === window.scrollY ? true : false);
   const onToggleMenu = () => setIsMenu((prev) => !prev);
@@ -44,10 +44,9 @@ export const Header: FC = () => {
             <Toggler margin={isMobile ? '40px' : '0'} />
           </Row>
         </Container>
-
-        <Drawer open={isMenu} onClose={onToggleMenu} />
       </AppBar>
       {isMobile && <Burger open={isMenu} isTop={isTop} onClick={onToggleMenu} />}
+      <Drawer open={isMenu} onClose={onToggleMenu} />
     </>
   );
 };
