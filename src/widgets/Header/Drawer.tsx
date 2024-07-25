@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 import { DrawerProps, Drawer as MuiDrawer, Stack } from '@mui/material';
 import { menuLinks } from './menuLinks';
-import { LinkButton } from '@/shared';
+import { ANCHOR, LinkButton } from '@/shared';
+import { ScrollService } from '@/shared/services';
 
 export const Drawer: FC<DrawerProps> = (props) => {
-  const onClick = (e: any) => {
+  const onClickLink = (e: React.MouseEvent<HTMLButtonElement>, anchor: ANCHOR) => {
     props.onClose?.(e, 'backdropClick');
-    window.scrollTo(0, 0);
+    ScrollService.toAnchor(anchor);
   };
 
   return (
@@ -21,8 +22,8 @@ export const Drawer: FC<DrawerProps> = (props) => {
           justifyContent="center"
           sx={{ width: '100svw', height: '100svh', bgcolor: 'secondary.light' }}
         >
-          {menuLinks.map(({ title, href }) => (
-            <LinkButton onClick={(e) => onClick(e)} sx={{ fontSize: '26px' }}>
+          {menuLinks.map(({ title, anchor }) => (
+            <LinkButton onClick={(e) => onClickLink(e, anchor)} sx={{ fontSize: '26px' }}>
               {title}
             </LinkButton>
           ))}

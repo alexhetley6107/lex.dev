@@ -3,9 +3,9 @@ export const enum THEME_MODE {
   LIGHT = 'light',
 }
 export const enum ANCHOR {
-  HOME = '#home',
-  ABOUT = '#about',
-  EXPERIENCE = '#experience',
-  PROJECTS = '#projects',
-  CONTACTS = '#contact',
+  HOME = 'home',
+  ABOUT = 'about',
+  EXPERIENCE = 'experience',
+  PROJECTS = 'projects',
+  CONTACTS = 'contact',
 }

@@ -7,19 +7,20 @@ import { Toggler } from './Toggler';
 import { Burger } from './Burger';
 import { useMediaQuery } from '@mui/material';
 import { Drawer } from './Drawer';
+import { ScrollService } from '@/shared/services';
 
 export const Header: FC = () => {
   const [isTop, setIsTop] = useState(true);
   const [isMenu, setIsMenu] = useState(false);
   const isMobile = useMediaQuery('(max-width:730px)');
 
-  const setHeaderHeight = () => setIsTop(0 === window.scrollY ? true : false);
+  const onSetTop = () => setIsTop(ScrollService.isTop);
   const onToggleMenu = () => setIsMenu((prev) => !prev);
 
   useEffect(() => {
-    window.addEventListener('scroll', setHeaderHeight);
+    window.addEventListener('scroll', onSetTop);
     return () => {
-      window.removeEventListener('scroll', setHeaderHeight);
+      window.removeEventListener('scroll', onSetTop);
     };
   }, []);
 

@@ -1,9 +1,9 @@
 import { ANCHOR } from '@/shared';
 
 export const menuLinks = [
-  { title: 'Home', href: ANCHOR.HOME },
-  { title: 'About', href: ANCHOR.ABOUT },
-  { title: 'Experience', href: ANCHOR.EXPERIENCE },
-  { title: 'Projects', href: ANCHOR.PROJECTS },
-  { title: 'Contacts', href: ANCHOR.CONTACTS },
+  { title: 'Home', anchor: ANCHOR.HOME },
+  { title: 'About', anchor: ANCHOR.ABOUT },
+  { title: 'Experience', anchor: ANCHOR.EXPERIENCE },
+  { title: 'Projects', anchor: ANCHOR.PROJECTS },
+  { title: 'Contacts', anchor: ANCHOR.CONTACTS },
 ];
