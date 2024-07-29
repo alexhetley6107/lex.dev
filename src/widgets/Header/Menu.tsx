@@ -5,11 +5,9 @@ import { ScrollService } from '@/shared/services';
 
 export const Menu: FC = () => {
   return (
-    <Row>
+    <Row sx={{ gap: '10px' }}>
       {menuLinks.map(({ title, anchor }) => (
-        <LinkButton onClick={() => ScrollService.toAnchor(anchor)} sx={{ mr: '20px' }}>
-          {title}
-        </LinkButton>
+        <LinkButton onClick={() => ScrollService.toAnchor(anchor)}>{title}</LinkButton>
       ))}
     </Row>
   );

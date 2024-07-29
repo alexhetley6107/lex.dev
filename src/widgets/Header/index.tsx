@@ -27,7 +27,6 @@ export const Header: FC = () => {
   return (
     <>
       <AppBar
-        position="sticky"
         elevation={isTop ? 0 : 3}
         sx={{
           zIndex: 10,
@@ -46,6 +45,7 @@ export const Header: FC = () => {
           </Row>
         </Container>
       </AppBar>
+
       {isMobile && <Burger open={isMenu} isTop={isTop} onClick={onToggleMenu} />}
       <Drawer open={isMenu} onClose={onToggleMenu} />
     </>

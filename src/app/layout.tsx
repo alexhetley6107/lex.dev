@@ -1,18 +1,21 @@
 import { ThemeProvider } from '@/providers';
+import { Container } from '@/shared';
 import { Header } from '@/widgets';
+import { Box } from '@mui/material';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'lex.dev',
   description: 'Portfolio',
 };
 
-const montserrat = Montserrat({
-  weight: ['300', '400', '500', '700'],
+const nunito = Nunito({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Arial', 'sans-serif'],
+  variable: '--font-nunito',
+  fallback: ['Roboto', 'sans-serif'],
 });
 
 export default function RootLayout({
@@ -22,10 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={nunito.className}>
         <ThemeProvider>
           <Header />
-          {children}
+          <Box sx={{ bgcolor: 'secondary.light', width: '100vw' }}>
+            <Container>
+              <main>{children}</main>
+            </Container>
+          </Box>
         </ThemeProvider>
       </body>
     </html>

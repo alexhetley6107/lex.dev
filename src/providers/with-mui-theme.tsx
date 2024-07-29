@@ -2,6 +2,7 @@
 import React, { FC, PropsWithChildren, useState, useEffect } from 'react';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
 import { ColorModeContext, THEME_MODE } from '@/shared';
+import { Nunito } from 'next/font/google';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<THEME_MODE>(THEME_MODE.LIGHT);
@@ -57,14 +58,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               }),
         },
         typography: {
-          fontFamily: 'Montserrat, sans-serif',
-        },
-        components: {
-          MuiCssBaseline: {
-            styleOverrides: {
-              body: {},
-            },
-          },
+          fontFamily: 'Nunito, Arial, sans-serif',
         },
       }),
     [mode]
