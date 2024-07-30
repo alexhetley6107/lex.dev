@@ -20,6 +20,7 @@ export const Toggler: FC<Props> = ({ margin }) => {
         mr: margin,
         borderRadius: '100px',
         p: 0,
+        backgroundImage: 'none',
         '&:focus': {
           outline: `2px solid ${theme.palette.primary.main}`,
         },

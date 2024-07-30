@@ -4,9 +4,9 @@ export default function Main() {
   return (
     <>
       <About />
-      <Skills />
+      {/* <Skills />
       <Experience />
-      <Portfolio />
+      <Portfolio /> */}
       <Contacts />
     </>
   );

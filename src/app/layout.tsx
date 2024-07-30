@@ -1,7 +1,6 @@
-import { ThemeProvider } from '@/providers';
+import { ThemeProvider } from './providers';
 import { Container } from '@/shared';
 import { Header } from '@/widgets';
-import { Box } from '@mui/material';
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 
@@ -28,11 +27,9 @@ export default function RootLayout({
       <body className={nunito.className}>
         <ThemeProvider>
           <Header />
-          <Box sx={{ bgcolor: 'secondary.light', width: '100vw' }}>
-            <Container>
-              <main>{children}</main>
-            </Container>
-          </Box>
+          <Container>
+            <main>{children}</main>
+          </Container>
         </ThemeProvider>
       </body>
     </html>
