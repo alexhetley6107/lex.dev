@@ -1,24 +1,23 @@
 import React, { FC } from 'react';
-import { Typography } from '@mui/material';
-import { ANCHOR } from '@/shared';
+import { ANCHOR, Row, Text } from '@/shared';
 import { ShadowBox } from '@/shared/ui/ShadowBox';
 
 export const Contacts: FC = () => {
   return (
-    <section id={ANCHOR.CONTACTS}>
-      <ShadowBox>
-        {[...new Array(2)].map((_, i) => (
-          <Typography key={i} variant="h1" color="primary" sx={{}}>
-            Contacts
-          </Typography>
-        ))}
-      </ShadowBox>
+    <footer id={ANCHOR.CONTACTS} style={{ paddingBlock: '40px 60px' }}>
+      <ShadowBox sx={{ padding: '30px 40px' }}>
+        <Row alignItems="flex-start" sx={{ mb: '30px' }}>
+          <Text sx={{ fontSize: '36px' }}>
+            Do you want to ask <br /> <span> something interesting?</span>
+          </Text>
 
-      {[...new Array(2)].map((_, i) => (
-        <Typography key={i} variant="h1" color="primary" sx={{}}>
-          Contacts
-        </Typography>
-      ))}
-    </section>
+          <Row width={'50%'}>Links</Row>
+        </Row>
+        <Row>
+          <Text>Contact me. I am in touch mon-fri from 8 am to 8 pm (gmt).</Text>
+          <Text>© Aleksandr Bredun, 2024</Text>
+        </Row>
+      </ShadowBox>
+    </footer>
   );
 };
