@@ -8,6 +8,7 @@ export const Row: FC<StackProps> = (props) => {
       alignItems={props.alignItems ?? 'center'}
       justifyContent={props.justifyContent ?? 'space-between'}
       flexWrap={props.flexWrap ?? 'nowrap'}
+      gap={props.gap ?? '5px'}
       sx={{ ...props.sx }}
     >
       {props.children}
