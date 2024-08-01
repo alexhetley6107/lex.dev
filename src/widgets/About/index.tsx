@@ -1,21 +1,17 @@
 import React, { FC } from 'react';
-import { Box, Typography } from '@mui/material';
-import { ANCHOR } from '@/shared';
+import { ANCHOR, Row, Text } from '@/shared';
 
 export const About: FC = () => {
   return (
     <section id={ANCHOR.ABOUT}>
-      <Box sx={{ pt: '70px' }}>
-        {[...new Array(10)].map((_, i) => (
-          <Box key={i} sx={{ color: 'primary.main' }}>
-            <Typography variant="h1" color="primary" sx={{}}>
-              About
-            </Typography>
-            <h1>About</h1>
-            <h1>Рассказ</h1>
-          </Box>
-        ))}
-      </Box>
+      <Row sx={{ pt: '70px', height: 'calc(100svh - 60px)' }}>
+        <div>
+          <Text sx={{ fontSize: '50px' }}>
+            <span>Hello!</span> My name is Aleksandr Bredun.
+          </Text>
+          <Text sx={{ fontSize: '50px' }}>I can do some great things for you.</Text>
+        </div>
+      </Row>
     </section>
   );
 };
