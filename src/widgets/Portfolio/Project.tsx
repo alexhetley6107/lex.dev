@@ -7,7 +7,7 @@ type Props = {};
 
 export const Project: FC<Props> = () => {
   return (
-    <ShadowBox sx={{ padding: '40px' }}>
+    <ShadowBox component="li" sx={{ padding: '40px', listStyle: 'none' }}>
       <Row gap="30px" justifyContent="flex-start" alignItems={'flex-start'}>
         <Box sx={{ minWidth: '400px', aspectRatio: '2/1.5', bgcolor: 'primary.main', borderRadius: '20px' }} />
 

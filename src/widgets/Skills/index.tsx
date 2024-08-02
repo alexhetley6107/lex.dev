@@ -8,23 +8,25 @@ export const Skills: FC = () => {
   return (
     <section id={ANCHOR.SKILLS}>
       <Row gap="20px" alignItems="flex-start" sx={{ paddingTop: '60px' }}>
-        <Stack gap="10px" width="49%">
+        <Stack width="49%">
           <Text sx={{ fontSize: '36px' }}>
             Hard <span>Skills</span>
           </Text>
-
-          {hardSkills.map((skill) => (
-            <SkillItem>{skill}</SkillItem>
-          ))}
+          <Stack gap="10px" component="ul" p={0}>
+            {hardSkills.map((skill) => (
+              <SkillItem>{skill}</SkillItem>
+            ))}
+          </Stack>
         </Stack>
-        <Stack gap="10px" width="49%">
+        <Stack width="49%">
           <Text sx={{ fontSize: '36px' }}>
             Soft <span>Skills</span>
           </Text>
-
-          {softSkills.map((skill) => (
-            <SkillItem>{skill}</SkillItem>
-          ))}
+          <Stack gap="10px" component="ul" p={0}>
+            {softSkills.map((skill) => (
+              <SkillItem>{skill}</SkillItem>
+            ))}
+          </Stack>
         </Stack>
       </Row>
     </section>

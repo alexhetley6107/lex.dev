@@ -6,7 +6,7 @@ export default function Main() {
       <About />
       <Skills />
       <Portfolio />
-      {/*  <Experience />*/}
+      <Experience />
       <Contacts />
     </>
   );
