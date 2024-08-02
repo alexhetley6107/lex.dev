@@ -25,7 +25,7 @@ export const Contacts: FC = () => {
             Do you want to ask <br /> <span> something interesting?</span>
           </Text>
 
-          <Row width={'50%'} gap="20px">
+          <Row width={'50%'} gap="20px" justifyContent="flex-end">
             {links.map(({ link, Icon }) => (
               <Link href={link} target="_blank">
                 <ShadowCircle>

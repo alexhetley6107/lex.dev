@@ -19,7 +19,7 @@ export const LinkButton: FC<BoxProps> = ({ children, ...props }) => {
 
           '@media (hover: hover)': {
             '&:hover': {
-              color: 'secondary.light',
+              color: 'secondary.main',
               div: { right: '0%', opacity: 1 },
             },
           },
@@ -46,8 +46,8 @@ export const LinkButton: FC<BoxProps> = ({ children, ...props }) => {
             right: '110%',
             zIndex: 0,
             opacity: 0,
-            transition: 'all 0.3s',
-            bgcolor: 'secondary.dark',
+            transition: 'all 0.4s',
+            bgcolor: 'primary.main',
             borderRadius: '6px',
           }}
         />

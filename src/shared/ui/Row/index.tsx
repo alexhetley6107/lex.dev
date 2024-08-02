@@ -9,7 +9,7 @@ export const Row: FC<StackProps> = (props) => {
       justifyContent={props.justifyContent ?? 'space-between'}
       flexWrap={props.flexWrap ?? 'nowrap'}
       gap={props.gap ?? '5px'}
-      sx={{ ...props.sx }}
+      {...props}
     >
       {props.children}
     </Stack>

@@ -29,11 +29,11 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
           ...(mode === THEME_MODE.LIGHT
             ? {
                 primary: {
-                  main: 'rgba(52, 112, 255, 1)',
-                  dark: 'rgba(52, 112, 255, 1)',
+                  main: 'rgb(78, 82, 255)',
+                  // main: 'rgba(52, 112, 255, 1)',
                 },
                 secondary: {
-                  main: 'rgba(62, 62, 62, 1)',
+                  main: 'rgba(236, 236, 236, 1)',
                   dark: 'rgba(25, 24, 32, 1)',
                   light: 'rgba(236, 236, 236, 1)',
                 },
@@ -43,11 +43,10 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               }
             : {
                 primary: {
-                  main: 'rgba(92, 177, 255, 1)',
-                  dark: 'rgba(52, 112, 255, 1)',
+                  main: 'rgb(71, 123, 247)',
                 },
                 secondary: {
-                  main: 'rgba(62, 62, 62, 1)',
+                  main: 'rgba(236, 236, 236, 1)',
                   dark: 'rgba(235, 235, 235, 1)',
                   light: 'rgba(25, 24, 32, 1)',
                 },
