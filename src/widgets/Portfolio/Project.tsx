@@ -13,9 +13,7 @@ export const Project: FC<Props> = () => {
 
         <Stack alignItems="flex-start">
           <ShadowBox sx={{ padding: '5px 10px', mb: '15px' }}>
-            <Text>
-              <span>December 2022</span>
-            </Text>
+            <Text>December 2022</Text>
           </ShadowBox>
           <Text sx={{ fontSize: '30px' }}>
             <span>Adeart - Online Gift Shop</span>

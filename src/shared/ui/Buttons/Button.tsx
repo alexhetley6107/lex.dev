@@ -1,44 +1,59 @@
-import { Box, ButtonProps, Button as MuiButton } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 import React, { FC } from 'react';
 
-export const Button: FC<ButtonProps> = ({ children, ...props }) => {
+export const Button: FC<BoxProps> = ({ children, ...props }) => {
   return (
-    <MuiButton
+    <Box
       {...props}
       sx={{
-        border: '1.5px solid black',
-        borderRadius: '8px',
-        color: 'secondary.light',
-        borderColor: 'secondary.dark',
-        bgcolor: 'secondary.dark',
-
+        color: 'secondary.dark',
+        zIndex: 0,
         fontWeight: 600,
         position: 'relative',
         overflow: 'hidden',
+        textTransform: 'capitalize',
+        borderRadius: '16px',
+        cursor: 'pointer',
+        padding: '8px 14px',
+        fontSize: '24px',
+        border: '2px solid gray',
+        borderColor: 'secondary.dark',
+
         '@media (hover: hover)': {
           '&:hover': {
-            bgcolor: 'secondary.light',
-
-            color: 'secondary.dark',
-            div: {
-              left: '110%',
-            },
+            color: 'secondary.main',
+            div: { right: '0%', opacity: 1 },
+            borderColor: 'primary.main',
           },
         },
+
+        ...props.sx,
       }}
     >
-      <span style={{ position: 'relative', zIndex: 1 }}>{children}</span>
+      <span
+        style={{
+          transition: 'all 0.2s',
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
+        {children}
+      </span>
 
       <Box
         sx={{
           position: 'absolute',
-          inset: 0,
+          height: '110%',
+          width: '110%',
+          top: '-5%',
+          right: '110%',
           zIndex: 0,
-          transition: 'all 0.3s',
-          bgcolor: 'secondary.dark',
-          borderRadius: '2px',
+          opacity: 0,
+          transition: 'all 0.4s',
+          bgcolor: 'primary.main',
+          borderRadius: '16px',
         }}
       />
-    </MuiButton>
+    </Box>
   );
 };
