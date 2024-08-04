@@ -19,13 +19,13 @@ const links = [
 export const Contacts: FC = () => {
   return (
     <footer id={ANCHOR.CONTACTS} style={{ paddingBlock: '60px' }}>
-      <ShadowBox sx={{ padding: '30px 40px' }}>
-        <Row alignItems="flex-start" sx={{ mb: '30px' }}>
-          <Text sx={{ fontSize: '36px' }}>
+      <ShadowBox sx={{ padding: '30px 40px', '@media (max-width: 600px)': { padding: '14px 24px' } }}>
+        <Row alignItems="flex-start" flexWrap={'wrap'} gap={'20px'} sx={{ mb: '30px' }}>
+          <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
             Do you want to ask <br /> <span> something interesting?</span>
           </Text>
 
-          <Row width={'50%'} gap="20px" justifyContent="flex-end">
+          <Row gap="20px" flexWrap={'wrap'}>
             {links.map(({ link, Icon }) => (
               <Link href={link} target="_blank">
                 <ShadowCircle>
@@ -35,8 +35,8 @@ export const Contacts: FC = () => {
             ))}
           </Row>
         </Row>
-        <Row>
-          <Text>Contact me. I am in touch mon-fri from 8 am to 8 pm (gmt).</Text>
+        <Row flexWrap={'wrap'} gap={'20px'}>
+          <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 8 am to 8 pm (gmt).</Text>
           <Text>© Aleksandr Bredun, 2024</Text>
         </Row>
       </ShadowBox>

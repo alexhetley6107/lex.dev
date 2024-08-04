@@ -29,8 +29,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
           ...(mode === THEME_MODE.LIGHT
             ? {
                 primary: {
-                  main: 'rgb(78, 82, 255)',
-                  // main: 'rgba(52, 112, 255, 1)',
+                  main: 'rgb(98, 82, 225)',
                 },
                 secondary: {
                   main: 'rgba(236, 236, 236, 1)',
