@@ -5,15 +5,15 @@ import { Project } from './Project';
 
 export const Portfolio: FC = () => {
   return (
-    <section id={ANCHOR.PORTFOLIO} style={{ paddingTop: '60px' }}>
-      <Text sx={{ fontSize: '36px' }}>
+    <Box component="section" id={ANCHOR.PORTFOLIO} sx={{ pt: '60px', '@media (max-width: 600px)': { pt: '20px' } }}>
+      <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
         My <span>Portfolio</span>
       </Text>
-      <Stack gap="20px" sx={{ paddingTop: '10px', p: 0 }} component="ul">
+      <Stack component="ul" sx={{ p: 0, gap: '20px', '@media (max-width: 600px)': { gap: '10px' } }}>
         <Project />
         <Project />
         <Project />
       </Stack>
-    </section>
+    </Box>
   );
 };

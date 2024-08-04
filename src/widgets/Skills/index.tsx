@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { ANCHOR, Row, Text } from '@/shared';
-import { Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { hardSkills, softSkills } from './data';
 import { SkillItem } from './SkillItem';
 
 export const Skills: FC = () => {
   return (
-    <section id={ANCHOR.SKILLS}>
+    <Box component="section" id={ANCHOR.SKILLS}>
       <Row gap="20px" alignItems="flex-start" flexWrap={'wrap'} sx={{ paddingTop: '60px' }}>
         <Stack sx={{ width: '48%', '@media (max-width: 800px)': { width: '100%' } }}>
           <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
@@ -29,6 +29,6 @@ export const Skills: FC = () => {
           </Stack>
         </Stack>
       </Row>
-    </section>
+    </Box>
   );
 };

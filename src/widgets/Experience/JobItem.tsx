@@ -12,16 +12,17 @@ export const JobItem: FC<Props> = ({ last }) => {
       component="li"
       sx={{
         position: 'relative',
-        padding: '40px',
+        padding: '34px 40px',
         listStyle: 'none',
-        ml: '50px',
+        ml: '40px',
+        '@media (max-width: 600px)': { padding: '24px 20px' },
       }}
     >
       <Stack alignItems="flex-start">
-        <ShadowBox sx={{ padding: '5px 10px', mb: '15px' }}>
+        <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>
           <Text>September 2022 - May 2024</Text>
         </ShadowBox>
-        <Text sx={{ fontSize: '30px' }}>
+        <Text sx={{ fontSize: '30px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
           <span>Your Next Agency</span>
         </Text>
         <Text sx={{ my: '15px' }}>
@@ -44,7 +45,7 @@ export const JobItem: FC<Props> = ({ last }) => {
       <Box
         sx={{
           position: 'absolute',
-          left: '-50px',
+          left: '-40px',
           top: 'calc(50% - 12px)',
           zIndex: 1,
         }}
@@ -57,11 +58,11 @@ export const JobItem: FC<Props> = ({ last }) => {
         <Box
           sx={{
             position: 'absolute',
-            left: '-39px',
+            left: '-29px',
             top: 'calc(50% + 10px)',
             width: '2px',
             bgcolor: 'primary.main',
-            height: 'calc(100% + 20px)',
+            height: 'calc(100% + 10px)',
             zIndex: 0,
           }}
         />

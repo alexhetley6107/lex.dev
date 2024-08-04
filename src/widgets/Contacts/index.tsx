@@ -1,24 +1,17 @@
 import React, { FC } from 'react';
 import { ANCHOR, Row, ShadowCircle, Text } from '@/shared';
 import { ShadowBox } from '@/shared/ui/ShadowBox';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import MailIcon from '@mui/icons-material/Mail';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from 'next/link';
-
-const links = [
-  { link: 'https://github.com/alexhetley6107', Icon: GitHubIcon },
-  { link: 'https://www.linkedin.com/in/aleksandr-bredun', Icon: LinkedInIcon },
-  { link: 'https://telegram.me/lexhetley', Icon: TelegramIcon },
-  { link: 'mailto:hetleyofficial@gmail.com', Icon: MailIcon },
-  { link: 'https://www.instagram.com/alhetley', Icon: InstagramIcon },
-];
+import { Box } from '@mui/material';
+import { links } from './links';
 
 export const Contacts: FC = () => {
   return (
-    <footer id={ANCHOR.CONTACTS} style={{ paddingBlock: '60px' }}>
+    <Box
+      component="footer"
+      id={ANCHOR.CONTACTS}
+      sx={{ pb: '50px', pt: '40px', '@media (max-width: 600px)': { pt: '20px' } }}
+    >
       <ShadowBox sx={{ padding: '30px 40px', '@media (max-width: 600px)': { padding: '14px 24px' } }}>
         <Row alignItems="flex-start" flexWrap={'wrap'} gap={'20px'} sx={{ mb: '30px' }}>
           <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
@@ -40,6 +33,6 @@ export const Contacts: FC = () => {
           <Text>© Aleksandr Bredun, 2024</Text>
         </Row>
       </ShadowBox>
-    </footer>
+    </Box>
   );
 };

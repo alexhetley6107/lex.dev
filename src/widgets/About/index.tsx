@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { ANCHOR, Row, Text } from '@/shared';
-import { Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { CheckButton } from './CheckButton';
 
 export const About: FC = () => {
   return (
-    <section id={ANCHOR.ABOUT}>
+    <Box component="section" id={ANCHOR.ABOUT}>
       <Row sx={{ pt: '70px', height: 'calc(100svh - 60px)' }}>
         <Stack alignItems="flex-start">
           <Text
@@ -30,6 +30,6 @@ export const About: FC = () => {
           <CheckButton />
         </Stack>
       </Row>
-    </section>
+    </Box>
   );
 };
