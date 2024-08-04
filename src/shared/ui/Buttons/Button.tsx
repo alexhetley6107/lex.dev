@@ -26,6 +26,11 @@ export const Button: FC<BoxProps> = ({ children, ...props }) => {
             borderColor: 'primary.main',
           },
         },
+        '@media (max-width: 600px)': {
+          fontSize: '16px',
+          borderWidth: '1px',
+          borderRadius: '8px',
+        },
 
         ...props.sx,
       }}

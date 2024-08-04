@@ -25,7 +25,7 @@ export const Contacts: FC = () => {
             Do you want to ask <br /> <span> something interesting?</span>
           </Text>
 
-          <Row gap="20px" flexWrap={'wrap'}>
+          <Row flexWrap={'wrap'} sx={{ gap: '20px', '@media (max-width: 600px)': { gap: '10px' } }}>
             {links.map(({ link, Icon }) => (
               <Link href={link} target="_blank">
                 <ShadowCircle>
