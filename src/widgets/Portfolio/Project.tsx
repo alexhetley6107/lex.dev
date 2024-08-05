@@ -16,6 +16,7 @@ export const Project: FC<Props> = () => {
       }}
     >
       <Row
+        component="article"
         gap="30px"
         alignItems={'flex-start'}
         sx={{

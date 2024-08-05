@@ -1,12 +1,21 @@
-import { Paper, PaperProps } from '@mui/material';
-import React, { FC, PropsWithChildren } from 'react';
+'use client';
+import React, { FC } from 'react';
+import { Paper, PaperProps, useTheme } from '@mui/material';
+import { THEME_MODE } from '@/shared/enums';
 
-type Props = PropsWithChildren<PaperProps>;
+export const ShadowBox: FC<PaperProps> = ({ children, ...props }) => {
+  const theme = useTheme();
+  const boxShadow =
+    theme.palette.mode === THEME_MODE.LIGHT
+      ? '-8px -8px 12px hsla(0, 0%, 100%, .8), 8px 8px 12px rgba(0, 0, 0, .10)'
+      : '-4px -4px 12px hsla(0, 0%, 100%, .05), 4px 4px 12px rgba(255, 255, 255, .15)';
+  const boxShadowInset =
+    theme.palette.mode === THEME_MODE.LIGHT
+      ? 'inset 0px 0px 12px rgba(0, 0, 0, .10)'
+      : 'inset 0px 0px 20px rgba(255, 255, 255, .15)';
 
-export const ShadowBox: FC<Props> = ({ children, ...props }) => {
   return (
     <Paper
-      elevation={10}
       {...props}
       sx={{
         borderRadius: '20px',
@@ -14,6 +23,12 @@ export const ShadowBox: FC<Props> = ({ children, ...props }) => {
         backgroundImage: 'none',
         padding: '20px',
         ...props.sx,
+        boxShadow,
+        '@media (hover: hover)': {
+          '&:hover': {
+            boxShadow: boxShadowInset,
+          },
+        },
       }}
     >
       {children}

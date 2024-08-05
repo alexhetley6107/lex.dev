@@ -3,18 +3,19 @@ import React, { FC, PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<BoxProps>;
 
-export const Text: FC<Props> = ({ children, sx, ...props }) => {
+export const Text: FC<Props> = ({ children, sx, component, ...props }) => {
   return (
     <Box
+      component={component ?? 'p'}
       sx={{
         color: 'secondary.dark',
-        '& p': { m: 0 },
+        m: 0,
         '& span': { color: 'primary.main' },
         ...sx,
       }}
       {...props}
     >
-      <p>{children}</p>
+      {children}
     </Box>
   );
 };

@@ -22,7 +22,7 @@ export const JobItem: FC<Props> = ({ job, last }) => {
         '@media (max-width: 600px)': { padding: '24px 20px' },
       }}
     >
-      <Stack alignItems="flex-start">
+      <Stack component="article" alignItems="flex-start">
         <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>
           <Text>{job.date}</Text>
         </ShadowBox>

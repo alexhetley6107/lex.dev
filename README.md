@@ -1,7 +1,8 @@
 MY LANDING PAGE
 PORTFOLIO
 
-- shadow on both themes
+- shadow on both themes/hover
+
 - typing animation
 - scroll animation
 - fade animation
