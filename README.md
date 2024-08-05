@@ -1,11 +1,8 @@
 MY LANDING PAGE
 PORTFOLIO
 
-- shadow on both themes/hover
-
-- typing animation
-- scroll animation
 - fade animation
+- scroll animation
 - about - interesting animation
 - reload on lex.dev click
 - work experience content

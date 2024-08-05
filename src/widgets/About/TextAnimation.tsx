@@ -1,33 +1,67 @@
 'use client';
-import { Row } from '@/shared';
 import { Box, Fade, Stack } from '@mui/material';
 import React, { FC, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { CheckButton } from './CheckButton';
 
+const CURSOR_CLASS = 'anim-cursor';
+const ACTIVE_CLASS = 'active';
+const HELLO_CLASS = 'hello';
+
 export const TextAnimation: FC = () => {
-  const [typing, setTyping] = useState(true);
   const [isButton, setIsButton] = useState(false);
 
   return (
-    <Stack alignItems="flex-start" gap="50px">
-      <Row>
+    <Stack
+      alignItems="flex-start"
+      gap="50px"
+      sx={{
+        height: '405px',
+        '.anim-cursor.active::after': {
+          content: '"|"',
+          color: 'primary.main',
+        },
+        '.anim-cursor::after': {
+          content: '""',
+        },
+        '.hello': {
+          color: 'primary.main',
+          content: '""',
+        },
+        '.hello::after': {
+          content: '""',
+        },
+        fontSize: '50px',
+        '@media (max-width: 1000px)': { fontSize: '36px' },
+        '@media (max-width: 600px)': { fontSize: '22px' },
+      }}
+    >
+      <Box>
+        <TypeAnimation
+          sequence={[1000, 'Hello!']}
+          speed={50}
+          className={HELLO_CLASS}
+          // style={{ display: 'inline' }}
+        />
         <TypeAnimation
           sequence={[
-            'Hello! My name is\n Aleksandr Bredun.',
+            1500,
+            ' My name is\n Aleksandr Bredun.',
             500,
-            'Hello! My name is\n Aleksandr Bredun.\n I am a frontend developer.',
+            ' My name is\n Aleksandr Bredun.\n I am a frontend developer.',
             500,
-            'Hello! My name is\n Aleksandr Bredun.\n I can do some great\n things for you.',
-
-            () => setTyping(false),
+            ' My name is\n Aleksandr Bredun.\n I can do some great\n things for you.',
+            (el) => (el as HTMLElement).classList.remove(ACTIVE_CLASS),
             () => setIsButton(true),
           ]}
           speed={50}
-          style={{ whiteSpace: 'pre-line', display: 'block', fontSize: '50px' }}
-          cursor={typing}
+          className={[CURSOR_CLASS, ACTIVE_CLASS].join(' ')}
+          style={{
+            whiteSpace: 'pre-line',
+            display: 'inline',
+          }}
         />
-      </Row>
+      </Box>
       <Fade in={isButton}>
         <div>
           <CheckButton />
