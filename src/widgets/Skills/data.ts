@@ -15,7 +15,6 @@ export const hardSkills = [
 ];
 
 export const softSkills = [
-  'Competent written and oral speech',
   'English level - B1',
   'I know how to work in a team, I have experience in communication with designers, managers and other developers',
   'I am responsible about deadlines',
@@ -27,6 +26,5 @@ export const softSkills = [
   'I am correctly convey thoughts, formulate questions',
   'I write detailed reports on the work done, if required',
   'I have experience working with a geographically distributed team (remote work)',
-  'I have experience in mentoring, training of junior specialists',
   'I am motivated to improve my skills, constantly studying new technologies in my field of activity',
 ];

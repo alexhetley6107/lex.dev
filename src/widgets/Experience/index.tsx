@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Box, Stack } from '@mui/material';
 import { ANCHOR, Row, Text } from '@/shared';
 import { JobItem } from './JobItem';
+import { jobs } from './jobs';
 
 export const Experience: FC = () => {
   return (
@@ -20,9 +21,9 @@ export const Experience: FC = () => {
           }}
           component="ul"
         >
-          <JobItem />
-          <JobItem />
-          <JobItem last />
+          {jobs.map((job, i, arr) => (
+            <JobItem key={job.id} job={job} last={i == arr.length - 1} />
+          ))}
         </Stack>
       </Row>
     </Box>

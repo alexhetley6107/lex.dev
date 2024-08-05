@@ -3,10 +3,14 @@ import { Box, Stack } from '@mui/material';
 import React, { FC } from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
+import { JobType } from './jobs';
 
-type Props = { last?: boolean };
+type Props = {
+  job: JobType;
+  last?: boolean;
+};
 
-export const JobItem: FC<Props> = ({ last }) => {
+export const JobItem: FC<Props> = ({ job, last }) => {
   return (
     <ShadowBox
       component="li"
@@ -20,10 +24,10 @@ export const JobItem: FC<Props> = ({ last }) => {
     >
       <Stack alignItems="flex-start">
         <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>
-          <Text>September 2022 - May 2024</Text>
+          <Text>{job.date}</Text>
         </ShadowBox>
         <Text sx={{ fontSize: '30px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
-          <span>Your Next Agency</span>
+          <span>{job.title}</span>
         </Text>
         <Text sx={{ my: '15px' }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus ipsum officia neque atque nostrum
