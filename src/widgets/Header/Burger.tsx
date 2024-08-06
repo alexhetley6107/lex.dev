@@ -25,7 +25,7 @@ export const Burger: FC<Props> = ({ open, isTop, ...props }) => {
         ml: 1,
         zIndex: 1400,
         top: isTop ? '17px' : '6px',
-        right: '6px',
+        right: '24px',
         transition: 'all 0.3s',
         p: 0,
       }}

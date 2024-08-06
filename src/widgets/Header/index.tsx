@@ -1,28 +1,20 @@
 'use client';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
-import { Container, LogoTitle, Row } from '@/shared/ui';
-import { Menu } from './Menu';
+import { Container, LinkButton, LogoTitle, Row } from '@/shared/ui';
 import { Toggler } from './Toggler';
 import { Burger } from './Burger';
 import { useMediaQuery } from '@mui/material';
 import { Drawer } from './Drawer';
-import { ScrollService } from '@/shared/services';
+import { useScroll } from '@/shared';
+import { menuLinks } from './menuLinks';
 
 export const Header: FC = () => {
-  const [isTop, setIsTop] = useState(true);
-  const [isMenu, setIsMenu] = useState(false);
   const isMobile = useMediaQuery('(max-width:730px)');
+  const { isTop, scrollTo } = useScroll();
 
-  const onSetTop = () => setIsTop(ScrollService.isTop);
+  const [isMenu, setIsMenu] = useState(false);
   const onToggleMenu = () => setIsMenu((prev) => !prev);
-
-  useEffect(() => {
-    window.addEventListener('scroll', onSetTop);
-    return () => {
-      window.removeEventListener('scroll', onSetTop);
-    };
-  }, []);
 
   return (
     <>
@@ -39,15 +31,23 @@ export const Header: FC = () => {
         <Container sx={{ height: '100%' }}>
           <Row sx={{ height: '100%' }}>
             <LogoTitle />
-            {!isMobile && <Menu />}
+            {!isMobile && (
+              <Row sx={{ gap: '10px' }}>
+                {menuLinks.map(({ title, anchor }) => (
+                  <LinkButton key={anchor} onClick={() => scrollTo(anchor)}>
+                    {title}
+                  </LinkButton>
+                ))}
+              </Row>
+            )}
 
-            <Toggler margin={isMobile ? '40px' : '0'} />
+            <Toggler margin={isMobile ? '60px' : '0'} />
           </Row>
         </Container>
       </AppBar>
 
       {isMobile && <Burger open={isMenu} isTop={isTop} onClick={onToggleMenu} />}
-      <Drawer open={isMenu} onClose={onToggleMenu} />
+      <Drawer open={isMenu} onClose={onToggleMenu} scrollTo={scrollTo} />
     </>
   );
 };

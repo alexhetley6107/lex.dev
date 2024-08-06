@@ -37,12 +37,7 @@ export const TextAnimation: FC = () => {
       }}
     >
       <Box>
-        <TypeAnimation
-          sequence={[1000, 'Hello!']}
-          speed={50}
-          className={HELLO_CLASS}
-          // style={{ display: 'inline' }}
-        />
+        <TypeAnimation sequence={[1000, 'Hello!']} speed={50} className={HELLO_CLASS} />
         <TypeAnimation
           sequence={[
             1500,
@@ -56,10 +51,7 @@ export const TextAnimation: FC = () => {
           ]}
           speed={50}
           className={[CURSOR_CLASS, ACTIVE_CLASS].join(' ')}
-          style={{
-            whiteSpace: 'pre-line',
-            display: 'inline',
-          }}
+          style={{ whiteSpace: 'pre-line', display: 'inline' }}
         />
       </Box>
       <Fade in={isButton}>

@@ -5,3 +5,4 @@ export * from './Row';
 export * from './Container';
 export * from './ShadowBox';
 export * from './ShadowCircle';
+export * from './ScreenBox';

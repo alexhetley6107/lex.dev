@@ -1,4 +1,4 @@
-import { ThemeProvider } from './providers';
+import { ScrollProvider, ThemeProvider } from './providers';
 import { Container } from '@/shared';
 import { Header } from '@/widgets';
 import type { Metadata } from 'next';
@@ -26,10 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <ThemeProvider>
-          <Header />
-          <Container>
-            <main>{children}</main>
-          </Container>
+          <ScrollProvider>
+            <Header />
+            <Container>
+              <main>{children}</main>
+            </Container>
+          </ScrollProvider>
         </ThemeProvider>
       </body>
     </html>

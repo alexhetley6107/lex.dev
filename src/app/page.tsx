@@ -1,3 +1,4 @@
+import { InitialAnimation } from '@/shared/ui/InitialAnimation';
 import { About, Contacts, Experience, Portfolio, Skills } from '@/widgets';
 
 export default function Main() {
@@ -8,6 +9,7 @@ export default function Main() {
       <Portfolio />
       <Experience />
       <Contacts />
+      {/* <InitialAnimation /> */}
     </>
   );
 }

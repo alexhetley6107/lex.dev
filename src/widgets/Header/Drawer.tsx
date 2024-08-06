@@ -4,10 +4,14 @@ import { menuLinks } from './menuLinks';
 import { ANCHOR, LinkButton } from '@/shared';
 import { ScrollService } from '@/shared/services';
 
-export const Drawer: FC<DrawerProps> = (props) => {
+type Props = DrawerProps & {
+  scrollTo: (a: ANCHOR) => void;
+};
+
+export const Drawer: FC<Props> = (props) => {
   const onClickLink = (e: React.MouseEvent<HTMLDivElement>, anchor: ANCHOR) => {
     props.onClose?.(e, 'backdropClick');
-    ScrollService.toAnchor(anchor);
+    props.scrollTo(anchor);
   };
 
   return (
@@ -24,7 +28,7 @@ export const Drawer: FC<DrawerProps> = (props) => {
           sx={{ width: '100svw', height: '100svh', bgcolor: 'secondary.light' }}
         >
           {menuLinks.map(({ title, anchor }) => (
-            <LinkButton onClick={(e) => onClickLink(e, anchor)} sx={{ fontSize: '26px' }}>
+            <LinkButton key={anchor} onClick={(e) => onClickLink(e, anchor)} sx={{ fontSize: '26px' }}>
               {title}
             </LinkButton>
           ))}
