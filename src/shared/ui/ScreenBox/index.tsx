@@ -11,6 +11,17 @@ export const ScreenBox = forwardRef<HTMLDivElement, PropsWithChildren>(({ childr
         bgcolor: 'secondary.light',
         overflowX: 'hidden',
         overflowY: 'auto',
+        '&::-webkit-scrollbar-thumb': {
+          borderWidth: { xs: '3px', md: `5px` },
+          borderStyle: 'solid',
+          borderColor: 'secondary.light',
+          backgroundColor: 'secondary.dark',
+          borderRadius: '30px',
+        },
+        '&::-webkit-scrollbar': {
+          mt: '100px',
+          width: { xs: '6px', md: '14px' },
+        },
       }}
     >
       {children}

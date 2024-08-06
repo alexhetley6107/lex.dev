@@ -24,7 +24,7 @@ export const Header: FC = () => {
           zIndex: 10,
           bgcolor: isTop ? 'transparent' : 'secondary.light',
           height: isTop ? '70px' : '50px',
-          transition: 'all 0.3s',
+          transition: 'height 0.3s',
           backgroundImage: 'none !important',
         }}
       >
