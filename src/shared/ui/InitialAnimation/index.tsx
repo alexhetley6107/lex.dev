@@ -1,22 +1,12 @@
-import React from 'react';
-import { Box } from '@mui/material';
+'use client';
+import React, { FC } from 'react';
+import { FadeContainer } from './FadeContainer';
+import { FadeContent } from './FadeContent';
 
-export const InitialAnimation = () => {
+export const InitialAnimation: FC = () => {
   return (
-    <Box
-      sx={{
-        display: 'block',
-        position: 'fixed',
-        width: '100vw',
-        height: '100svh',
-        bgcolor: 'primary.dark',
-        top: 0,
-        left: 0,
-        zIndex: 20,
-        overscrollBehavior: 'none',
-      }}
-    >
-      <Box />
-    </Box>
+    <FadeContainer>
+      <FadeContent />
+    </FadeContainer>
   );
 };

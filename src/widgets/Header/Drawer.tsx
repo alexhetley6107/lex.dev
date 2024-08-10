@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { DrawerProps, Drawer as MuiDrawer, Stack } from '@mui/material';
 import { menuLinks } from './menuLinks';
 import { ANCHOR, LinkButton } from '@/shared';
-import { ScrollService } from '@/shared/services';
 
 type Props = DrawerProps & {
   scrollTo: (a: ANCHOR) => void;
