@@ -29,10 +29,7 @@ export const JobItem: FC<Props> = ({ job, last }) => {
         <Text sx={{ fontSize: '30px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
           <span>{job.title}</span>
         </Text>
-        <Text sx={{ my: '15px' }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus ipsum officia neque atque nostrum
-          assumenda nam..
-        </Text>
+        <Text sx={{ m: '5px 0 15px 0' }}>{job.description}</Text>
         <Row width={'50%'} gap="20px" justifyContent={'flex-start'}>
           <ShadowCircle>
             <InstagramIcon />
