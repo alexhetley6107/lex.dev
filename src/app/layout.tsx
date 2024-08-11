@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 
 export const metadata: Metadata = {
-  title: 'lex.dev',
-  description: 'Portfolio',
+  title: 'Aleksandr Bredun. Frontend Developer',
+  description: 'Frontend Portfolio',
 };
 
 const nunito = Nunito({

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 const boxStyle = {
-  width: '33.3%',
+  width: '33%',
   height: '100svh',
   bgcolor: 'primary.main',
   position: 'absolute',
@@ -43,8 +43,8 @@ export const FadeScreen = () => {
           animationDelay: '0.4s',
         }}
       />
-      <Box className="box2" sx={{ ...boxStyle, left: '33.3%', animationDelay: '0.6s' }} />
-      <Box className="box3" sx={{ ...boxStyle, left: '66.6%', animationDelay: '0.8s' }} />
+      <Box className="box2" sx={{ ...boxStyle, left: '33.25%', animationDelay: '0.6s' }} />
+      <Box className="box3" sx={{ ...boxStyle, left: '66.5%', animationDelay: '0.8s' }} />
     </Box>
   );
 };

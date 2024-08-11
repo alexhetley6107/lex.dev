@@ -15,6 +15,7 @@ export const Header: FC = () => {
 
   const [isMenu, setIsMenu] = useState(false);
   const onToggleMenu = () => setIsMenu((prev) => !prev);
+  const onLogoClick = () => document.location.reload();
 
   return (
     <>
@@ -26,14 +27,14 @@ export const Header: FC = () => {
           height: isTop ? '70px' : '50px',
           transition: 'height 0.3s',
           backgroundImage: 'none !important',
-          marginInline: '16px',
+          marginRight: { xs: '0px', md: '14px' },
           boxShadow: 'none',
-          width: 'calc(100vw - 32px)',
+          width: { xs: '100vw', md: 'calc(100vw - 16px)' },
         }}
       >
         <Container sx={{ height: '100%' }}>
           <Row sx={{ height: '100%' }}>
-            <LogoTitle />
+            <LogoTitle onClick={onLogoClick} />
             {!isMobile && (
               <Row sx={{ gap: '10px' }}>
                 {menuLinks.map(({ title, anchor }) => (

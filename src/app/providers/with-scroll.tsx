@@ -25,9 +25,7 @@ export const ScrollProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ScrollContext.Provider value={{ isTop, scrollTo }}>
-      <Box sx={{}}>
-        <ScreenBox ref={boxRef}>{children}</ScreenBox>
-      </Box>
+      <ScreenBox ref={boxRef}>{children}</ScreenBox>
     </ScrollContext.Provider>
   );
 };
