@@ -1,15 +1,16 @@
-import { InitialAnimation } from '@/shared/ui/InitialAnimation';
-import { About, Contacts, Experience, Portfolio, Skills } from '@/widgets';
+import { FadeScreen } from '@/shared/ui';
+import { About, Contacts, Experience, Header, Portfolio, Skills } from '@/widgets';
 
 export default function Main() {
   return (
     <>
+      <Header />
       <About />
       <Skills />
       <Portfolio />
       <Experience />
       <Contacts />
-      {/* <InitialAnimation /> */}
+      <FadeScreen />
     </>
   );
 }

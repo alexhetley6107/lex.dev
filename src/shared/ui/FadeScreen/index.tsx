@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-export const FadeContent = () => {
+export const FadeScreen = () => {
   return (
     <Box
+      className="fade_screen"
       sx={{
         position: 'fixed',
         left: 0,
@@ -16,6 +17,7 @@ export const FadeContent = () => {
         justifyContent: 'center',
         bgcolor: 'primary.dark',
         overscrollBehavior: 'none',
+        transition: 'opacity 1s',
         color: 'white',
       }}
     >

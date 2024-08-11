@@ -1,6 +1,7 @@
 'use client';
 import React, { FC, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { ANCHOR, ScreenBox, ScrollContext } from '@/shared';
+import { Box } from '@mui/material';
 
 export const ScrollProvider: FC<PropsWithChildren> = ({ children }) => {
   const boxRef = useRef<HTMLDivElement>(null);
@@ -24,7 +25,9 @@ export const ScrollProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ScrollContext.Provider value={{ isTop, scrollTo }}>
-      <ScreenBox ref={boxRef}>{children}</ScreenBox>
+      <Box sx={{}}>
+        <ScreenBox ref={boxRef}>{children}</ScreenBox>
+      </Box>
     </ScrollContext.Provider>
   );
 };

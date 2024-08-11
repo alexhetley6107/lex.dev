@@ -26,6 +26,9 @@ export const Header: FC = () => {
           height: isTop ? '70px' : '50px',
           transition: 'height 0.3s',
           backgroundImage: 'none !important',
+          marginInline: '16px',
+          boxShadow: 'none',
+          width: 'calc(100vw - 32px)',
         }}
       >
         <Container sx={{ height: '100%' }}>

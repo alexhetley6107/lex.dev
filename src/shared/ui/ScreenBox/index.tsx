@@ -19,7 +19,6 @@ export const ScreenBox = forwardRef<HTMLDivElement, PropsWithChildren>(({ childr
           borderRadius: '30px',
         },
         '&::-webkit-scrollbar': {
-          mt: '100px',
           width: { xs: '6px', md: '14px' },
         },
       }}

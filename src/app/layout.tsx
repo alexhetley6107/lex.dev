@@ -1,6 +1,5 @@
-import { ScrollProvider, ThemeProvider } from './providers';
+import { FadeProvider, ScrollProvider, ThemeProvider } from './providers';
 import { Container } from '@/shared';
-import { Header } from '@/widgets';
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 
@@ -27,10 +26,11 @@ export default function RootLayout({
       <body className={nunito.className}>
         <ThemeProvider>
           <ScrollProvider>
-            <Header />
-            <Container>
-              <main>{children}</main>
-            </Container>
+            <FadeProvider>
+              <Container>
+                <main>{children}</main>
+              </Container>
+            </FadeProvider>
           </ScrollProvider>
         </ThemeProvider>
       </body>
