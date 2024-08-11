@@ -37,10 +37,10 @@ export const TextAnimation: FC = () => {
       }}
     >
       <Box>
-        <TypeAnimation sequence={[1000, 'Hello!']} speed={50} className={HELLO_CLASS} />
+        <TypeAnimation sequence={[1500, 'Hello!']} speed={50} className={HELLO_CLASS} />
         <TypeAnimation
           sequence={[
-            1500,
+            2500,
             ' My name is\n Aleksandr Bredun.',
             500,
             ' My name is\n Aleksandr Bredun.\n I am a frontend developer.',

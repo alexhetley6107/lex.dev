@@ -6,4 +6,4 @@ export * from './Container';
 export * from './ShadowBox';
 export * from './ShadowCircle';
 export * from './ScreenBox';
-export * from './FadeScreen';
+export * from './Fade';
