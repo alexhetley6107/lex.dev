@@ -5,7 +5,7 @@ import { Project } from './Project';
 
 export const Portfolio: FC = () => {
   return (
-    <Box component="section" id={ANCHOR.PORTFOLIO} sx={{ pt: '60px', '@media (max-width: 600px)': { pt: '20px' } }}>
+    <Box component="section" id={ANCHOR.PORTFOLIO} sx={{ pt: '60px', '@media (max-width: 600px)': { mt: '-40px' } }}>
       <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
         My <span>Portfolio</span>
       </Text>

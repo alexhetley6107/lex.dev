@@ -16,7 +16,7 @@ export const TextAnimation: FC = () => {
       alignItems="flex-start"
       gap="50px"
       sx={{
-        height: '405px',
+        height: '305px',
         '.anim-cursor.active::after': {
           content: '"|"',
           color: 'primary.main',
@@ -41,11 +41,11 @@ export const TextAnimation: FC = () => {
         <TypeAnimation
           sequence={[
             2500,
-            ' My name is\n Aleksandr Bredun.',
+            ' My name is Aleksandr Bredun.',
             500,
-            ' My name is\n Aleksandr Bredun.\n I am a frontend developer.',
+            ' My name is Aleksandr Bredun.\n I am a frontend developer.',
             500,
-            ' My name is\n Aleksandr Bredun.\n I can do some great\n things for you.',
+            ' My name is Aleksandr Bredun.\n I can do some great things for you.',
             (el) => (el as HTMLElement).classList.remove(ACTIVE_CLASS),
             () => setIsButton(true),
           ]}

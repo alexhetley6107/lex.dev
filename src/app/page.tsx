@@ -7,7 +7,7 @@ export default function Main() {
       <Header />
       <About />
       <Skills />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Experience />
       <Contacts />
       <FadeScreen />
