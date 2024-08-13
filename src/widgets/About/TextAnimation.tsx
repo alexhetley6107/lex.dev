@@ -33,7 +33,7 @@ export const TextAnimation: FC = () => {
         },
         fontSize: '50px',
         '@media (max-width: 1000px)': { fontSize: '36px' },
-        '@media (max-width: 600px)': { fontSize: '22px' },
+        '@media (max-width: 600px)': { fontSize: '22px', height: '205px' },
       }}
     >
       <Box>

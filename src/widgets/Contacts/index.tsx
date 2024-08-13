@@ -29,7 +29,7 @@ export const Contacts: FC = () => {
           </Row>
         </Row>
         <Row flexWrap={'wrap'} gap={'20px'}>
-          <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 8 am to 8 pm (gmt).</Text>
+          <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 8 am to 8 pm (GMT+3).</Text>
           <Text>© Aleksandr Bredun, 2024</Text>
         </Row>
       </ShadowBox>

@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { ANCHOR, Row, Text } from '@/shared';
+import { ANCHOR, Row } from '@/shared';
 import { Box, Stack } from '@mui/material';
-import { CheckButton } from './CheckButton';
 import { TextAnimation } from './TextAnimation';
 
 export const About: FC = () => {
@@ -10,25 +9,6 @@ export const About: FC = () => {
       <Row sx={{ pt: '70px', height: 'calc(100svh - 60px)' }}>
         <Stack alignItems="flex-start" gap="50px">
           <TextAnimation />
-          {/* <Text
-            sx={{
-              fontSize: '50px',
-              '@media (max-width: 1000px)': { fontSize: '36px' },
-              '@media (max-width: 600px)': { fontSize: '22px' },
-            }}
-          >
-            <span>Hello!</span> My name is Aleksandr Bredun.
-          </Text> */}
-          {/* <Text
-            sx={{
-              fontSize: '50px',
-              '@media (max-width: 1000px)': { fontSize: '36px' },
-              '@media (max-width: 600px)': { fontSize: '22px' },
-              mb: '30px',
-            }}
-          >
-            I can do some great things for you.
-          </Text> */}
         </Stack>
       </Row>
     </Box>
