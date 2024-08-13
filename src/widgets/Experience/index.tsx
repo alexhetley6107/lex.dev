@@ -1,15 +1,17 @@
 import React, { FC } from 'react';
 import { Box, Stack } from '@mui/material';
-import { ANCHOR, Row, Text } from '@/shared';
+import { ANCHOR, Row, ScrollAnimateContainer, Text } from '@/shared';
 import { JobItem } from './JobItem';
 import { jobs } from './jobs';
 
 export const Experience: FC = () => {
   return (
     <Box component="section" id={ANCHOR.EXPERIENCE} sx={{ pt: '60px', '@media (max-width: 600px)': { mt: '-40px' } }}>
-      <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
-        Work <span>Experience</span>
-      </Text>
+      <ScrollAnimateContainer>
+        <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
+          Work <span>Experience</span>
+        </Text>
+      </ScrollAnimateContainer>
       <Row justifyContent="flex-start" alignItems="normal">
         <Stack
           sx={{

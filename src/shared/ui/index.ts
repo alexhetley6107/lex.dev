@@ -7,3 +7,4 @@ export * from './ShadowBox';
 export * from './ShadowCircle';
 export * from './ScreenBox';
 export * from './Fade';
+export * from './ScrollAnimateContainer';
