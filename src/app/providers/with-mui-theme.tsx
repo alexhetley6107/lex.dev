@@ -31,43 +31,30 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 primary: {
                   main: 'rgb(98, 82, 225)',
                   dark: 'rgba(25, 24, 32, 1)',
+                  light: 'rgba(236, 236, 236, 0.9)',
                 },
                 secondary: {
                   main: 'rgba(236, 236, 236, 1)',
                   dark: 'rgba(25, 24, 32, 1)',
                   light: 'rgba(236, 236, 236, 1)',
                 },
-                error: {
-                  main: '#c9473f',
-                },
               }
             : {
                 primary: {
                   main: 'rgb(71, 123, 247)',
                   dark: 'rgba(25, 24, 32, 1)',
+                  light: 'rgba(25, 24, 32, 0.9)',
                 },
                 secondary: {
                   main: 'rgba(236, 236, 236, 1)',
                   dark: 'rgba(235, 235, 235, 1)',
                   light: 'rgba(25, 24, 32, 1)',
                 },
-                error: {
-                  main: '#c9473f',
-                },
               }),
         },
         typography: {
           fontFamily: 'Nunito, Arial, sans-serif',
         },
-        // components: {
-        //   MuiCssBaseline: {
-        //     styleOverrides: {
-        //       body: {
-        //         backgroundColor: mode === THEME_MODE.LIGHT ? 'rgba(235, 235, 235, 1)' : 'rgba(25, 24, 32, 1)',
-        //       },
-        //     },
-        //   },
-        // },
       }),
     [mode]
   );

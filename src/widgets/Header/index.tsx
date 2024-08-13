@@ -23,7 +23,7 @@ export const Header: FC = () => {
         elevation={isTop ? 0 : 3}
         sx={{
           zIndex: 10,
-          bgcolor: isTop ? 'transparent' : 'secondary.light',
+          bgcolor: isTop ? 'transparent' : 'primary.light',
           height: isTop ? '70px' : '50px',
           transition: 'height 0.3s',
           backgroundImage: 'none !important',
