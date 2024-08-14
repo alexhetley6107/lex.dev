@@ -8,14 +8,7 @@ type Props = {};
 export const Project: FC<Props> = () => {
   return (
     <ScrollAnimateContainer>
-      <ShadowBox
-        component="li"
-        sx={{
-          listStyle: 'none',
-          p: '40px',
-          '@media (max-width: 600px)': { p: '20px' },
-        }}
-      >
+      <ShadowBox component="li" sx={{ listStyle: 'none', p: { xs: '20px', sm: '40px' } }}>
         <Row
           component="article"
           gap="30px"

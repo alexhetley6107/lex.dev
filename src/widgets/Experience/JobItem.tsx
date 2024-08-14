@@ -14,18 +14,12 @@ export const JobItem: FC<Props> = ({ job, last }) => {
   return (
     <Box component="li" sx={{ position: 'relative', listStyle: 'none', ml: '40px' }}>
       <ScrollAnimateContainer>
-        <ShadowBox
-          sx={{
-            padding: '34px 40px',
-
-            '@media (max-width: 600px)': { padding: '24px 20px' },
-          }}
-        >
+        <ShadowBox sx={{ p: { xs: '24px 20px', sm: '34px 40px' } }}>
           <Stack component="article" alignItems="flex-start">
-            <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>
+            <ShadowBox sx={{ p: { xs: '2px 10px', sm: '5px 10px' }, mb: '15px' }}>
               <Text>{job.date}</Text>
             </ShadowBox>
-            <Text sx={{ fontSize: '30px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
+            <Text sx={{ fontSize: { xs: '24px', sm: '30px' } }}>
               <span>{job.title}</span>
             </Text>
             <Text sx={{ m: '5px 0 15px 0' }}>{job.description}</Text>

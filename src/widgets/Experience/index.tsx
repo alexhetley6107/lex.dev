@@ -6,18 +6,16 @@ import { jobs } from './jobs';
 
 export const Experience: FC = () => {
   return (
-    <Box component="section" id={ANCHOR.EXPERIENCE} sx={{ pt: '60px', '@media (max-width: 600px)': { mt: '-40px' } }}>
+    <Box component="section" id={ANCHOR.EXPERIENCE} sx={{ pt: '60px', mt: '-40px' }}>
       <ScrollAnimateContainer>
-        <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
+        <Text sx={{ fontSize: { xs: '24px', sm: '36px' } }}>
           Work <span>Experience</span>
         </Text>
       </ScrollAnimateContainer>
       <Row justifyContent="flex-start" alignItems="normal">
         <Stack
           sx={{
-            gap: '20px',
-            '@media (max-width: 600px)': { gap: '10px' },
-
+            gap: { xs: '10px', sm: '20px' },
             p: 0,
             flexGrow: 1,
           }}

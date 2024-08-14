@@ -16,7 +16,6 @@ export const TextAnimation: FC = () => {
       alignItems="flex-start"
       gap="50px"
       sx={{
-        height: '305px',
         '.anim-cursor.active::after': {
           content: '"|"',
           color: 'primary.main',
@@ -31,9 +30,8 @@ export const TextAnimation: FC = () => {
         '.hello::after': {
           content: '""',
         },
-        fontSize: '50px',
-        '@media (max-width: 1000px)': { fontSize: '36px' },
-        '@media (max-width: 600px)': { fontSize: '22px', height: '205px' },
+        height: { xs: '205px', sm: '305px' },
+        fontSize: { xs: '22px', sm: '30px', md: '50px' },
       }}
     >
       <Box>

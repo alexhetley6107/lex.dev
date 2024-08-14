@@ -7,10 +7,10 @@ import { SkillItem } from './SkillItem';
 export const Skills: FC = () => {
   return (
     <Box component="section" id={ANCHOR.SKILLS}>
-      <Row gap="20px" alignItems="flex-start" flexWrap={'wrap'} sx={{ paddingTop: '65px' }}>
-        <Stack sx={{ width: '48%', '@media (max-width: 800px)': { width: '100%' } }}>
+      <Row gap="20px" alignItems="flex-start" flexWrap={'wrap'} sx={{ pt: '65px' }}>
+        <Stack sx={{ width: { xs: '100%', md: '48%' } }}>
           <ScrollAnimateContainer>
-            <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
+            <Text sx={{ fontSize: { xs: '24px', sm: '36px' } }}>
               Hard <span>Skills</span>
             </Text>
           </ScrollAnimateContainer>
@@ -22,9 +22,9 @@ export const Skills: FC = () => {
             ))}
           </Stack>
         </Stack>
-        <Stack sx={{ width: '48%', '@media (max-width: 800px)': { width: '100%' } }}>
+        <Stack sx={{ width: { xs: '100%', md: '48%' } }}>
           <ScrollAnimateContainer>
-            <Text sx={{ fontSize: '36px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
+            <Text sx={{ fontSize: { xs: '24px', sm: '36px' } }}>
               Soft <span>Skills</span>
             </Text>
           </ScrollAnimateContainer>

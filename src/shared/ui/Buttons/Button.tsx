@@ -27,9 +27,9 @@ export const Button: FC<BoxProps> = ({ children, ...props }) => {
           },
         },
         '@media (max-width: 600px)': {
-          fontSize: '16px',
+          fontSize: '18px',
           borderWidth: '1px',
-          borderRadius: '8px',
+          borderRadius: '10px',
         },
 
         ...props.sx,
@@ -56,7 +56,7 @@ export const Button: FC<BoxProps> = ({ children, ...props }) => {
           opacity: 0,
           transition: 'all 0.4s',
           bgcolor: 'primary.main',
-          borderRadius: '16px',
+          borderRadius: '10px',
         }}
       />
     </Box>
