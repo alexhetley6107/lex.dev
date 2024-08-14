@@ -30,15 +30,11 @@ export const JobItem: FC<Props> = ({ job, last }) => {
             </Text>
             <Text sx={{ m: '5px 0 15px 0' }}>{job.description}</Text>
             <Row width={'50%'} gap="20px" justifyContent={'flex-start'}>
-              <ShadowCircle>
-                <Icon name="html" />
-              </ShadowCircle>
-              <ShadowCircle>
-                <InstagramIcon />
-              </ShadowCircle>
-              <ShadowCircle>
-                <InstagramIcon />
-              </ShadowCircle>
+              {job.skills.map((name, i) => (
+                <ShadowCircle key={i}>
+                  <Icon name={name} />
+                </ShadowCircle>
+              ))}
             </Row>
           </Stack>
         </ShadowBox>
