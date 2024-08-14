@@ -1,4 +1,4 @@
-import { Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
+import { Icon, Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
 import { Box, Stack } from '@mui/material';
 import React, { FC } from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -31,7 +31,7 @@ export const JobItem: FC<Props> = ({ job, last }) => {
             <Text sx={{ m: '5px 0 15px 0' }}>{job.description}</Text>
             <Row width={'50%'} gap="20px" justifyContent={'flex-start'}>
               <ShadowCircle>
-                <InstagramIcon />
+                <Icon name="html" />
               </ShadowCircle>
               <ShadowCircle>
                 <InstagramIcon />
