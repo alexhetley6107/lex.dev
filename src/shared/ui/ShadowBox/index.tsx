@@ -3,7 +3,17 @@ import React, { FC } from 'react';
 import { Paper, PaperProps, useTheme } from '@mui/material';
 import { THEME_MODE } from '@/shared/enums';
 
-export const ShadowBox: FC<PaperProps> = ({ children, ...props }) => {
+const circleStyle = {
+  borderRadius: '200px',
+  width: { xs: '32px', sm: '44px' },
+  height: { xs: '32px', sm: '44px' },
+
+  padding: { xs: '4px', sm: '10px' },
+};
+
+type Props = PaperProps & { circle?: boolean };
+
+export const ShadowBox: FC<Props> = ({ children, circle, ...props }) => {
   const theme = useTheme();
   const boxShadow =
     theme.palette.mode === THEME_MODE.LIGHT
@@ -22,13 +32,14 @@ export const ShadowBox: FC<PaperProps> = ({ children, ...props }) => {
         bgcolor: 'secondary.light',
         backgroundImage: 'none',
         padding: '20px',
-        ...props.sx,
         boxShadow,
         '@media (hover: hover)': {
           '&:hover': {
             boxShadow: boxShadowInset,
           },
         },
+        ...(circle && circleStyle),
+        ...props.sx,
       }}
     >
       {children}

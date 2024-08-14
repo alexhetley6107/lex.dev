@@ -29,11 +29,11 @@ export const JobItem: FC<Props> = ({ job, last }) => {
               <span>{job.title}</span>
             </Text>
             <Text sx={{ m: '5px 0 15px 0' }}>{job.description}</Text>
-            <Row width={'50%'} gap="20px" justifyContent={'flex-start'}>
+            <Row gap={{ xs: '5px', sm: '20px' }} justifyContent={'flex-start'} flexWrap={'wrap'}>
               {job.skills.map((name, i) => (
-                <ShadowCircle key={i}>
+                <ShadowBox key={i} circle>
                   <Icon name={name} />
-                </ShadowCircle>
+                </ShadowBox>
               ))}
             </Row>
           </Stack>
@@ -48,9 +48,9 @@ export const JobItem: FC<Props> = ({ job, last }) => {
           zIndex: 1,
         }}
       >
-        <ShadowCircle sx={{ padding: '0px 6px', width: '24px', height: '24px' }}>
+        <ShadowBox circle sx={{ padding: '0px 6px', width: '24px', height: '24px' }}>
           <CircleIcon color="primary" sx={{ width: '12px' }} />
-        </ShadowCircle>
+        </ShadowBox>
       </Box>
       {!last && (
         <Box
