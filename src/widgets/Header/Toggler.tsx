@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Row, THEME_MODE, useToggleColorMode } from '@/shared';
+import { Row, ShadowBox, THEME_MODE, useToggleColorMode } from '@/shared';
 import { Box, Button, Paper, useTheme } from '@mui/material';
 import MoonIcon from '@mui/icons-material/DarkMode';
 import SunIcon from '@mui/icons-material/WbSunny';
@@ -26,7 +26,7 @@ export const Toggler: FC<Props> = ({ margin }) => {
         },
       }}
     >
-      <Paper sx={{ width: '65px', borderRadius: '100px', bgcolor: 'secondary.light' }}>
+      <ShadowBox sx={{ p: 0, width: '65px', borderRadius: '100px', bgcolor: 'secondary.light' }}>
         <Row sx={{ position: 'relative', height: '100%', borderRadius: '100px', p: '5px' }}>
           <SunIcon
             sx={{
@@ -56,7 +56,7 @@ export const Toggler: FC<Props> = ({ margin }) => {
             }}
           />
         </Row>
-      </Paper>
+      </ShadowBox>
     </Button>
   );
 };

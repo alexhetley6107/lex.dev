@@ -2,6 +2,7 @@ import { ButtonProps, IconButton, Paper } from '@mui/material';
 import React, { FC } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { ShadowBox } from '@/shared';
 
 const iconStyles = {
   width: '30px',
@@ -30,8 +31,7 @@ export const Burger: FC<Props> = ({ open, isTop, ...props }) => {
         p: 0,
       }}
     >
-      <Paper
-        elevation={2}
+      <ShadowBox
         sx={{
           position: 'relative',
           p: '8px',
@@ -44,7 +44,7 @@ export const Burger: FC<Props> = ({ open, isTop, ...props }) => {
       >
         <MenuIcon sx={{ ...iconStyles, right: open ? '40px' : '3px' }} />
         <CloseIcon sx={{ ...iconStyles, left: open ? '3px' : '40px' }} />
-      </Paper>
+      </ShadowBox>
     </IconButton>
   );
 };

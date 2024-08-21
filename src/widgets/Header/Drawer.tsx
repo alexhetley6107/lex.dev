@@ -14,17 +14,17 @@ export const Drawer: FC<Props> = (props) => {
   };
 
   return (
-    <MuiDrawer anchor={'right'} {...props} sx={{ zIndex: 10 }}>
+    <MuiDrawer anchor={'right'} {...props} sx={{ zIndex: 10, height: '100svh !important' }}>
       <Stack
         alignItems="center"
         justifyContent="center"
-        sx={{ width: '100svw', height: '100svh', bgcolor: 'secondary.light' }}
+        sx={{ width: '100svw', height: '100svh !important', bgcolor: 'secondary.light' }}
       >
         <Stack
           alignItems="center"
           justifyContent="center"
           gap="10px"
-          sx={{ width: '100svw', height: '100svh', bgcolor: 'secondary.light' }}
+          sx={{ width: '100svw', height: '100svh !important', bgcolor: 'secondary.light' }}
         >
           {menuLinks.map(({ title, anchor }) => (
             <LinkButton key={anchor} onClick={(e) => onClickLink(e, anchor)} sx={{ fontSize: '26px' }}>
