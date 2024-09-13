@@ -7,18 +7,18 @@ export type JobType = {
 };
 
 export const jobs: JobType[] = [
-  {
-    id: 4,
-    title: 'Your Next Agency',
-    date: 'May 2024 - Present',
-    description:
-      "Development and support of the frontend of the company's internal tools, automation of development processes.",
-    skills: ['react', 'ts', 'nodejs', 'vite', 'vue', 'storybook', 'git', 'tailwind', 'swagger', 'graphql', 'eslint'],
-  },
+  // {
+  //   id: 4,
+  //   title: 'Your Next Agency',
+  //   date: 'May 2024 - Present',
+  //   description:
+  //     "Development and support of the frontend of the company's internal tools, automation of development processes.",
+  //   skills: ['react', 'ts', 'nodejs', 'vite', 'vue', 'storybook', 'git', 'tailwind', 'swagger', 'graphql', 'eslint'],
+  // },
   {
     id: 3,
     title: 'Siema',
-    date: 'September 2022 - April 2024',
+    date: 'September 2022 - August 2024',
     description:
       'Development of the frontend part of projects in the field of e-commerce and bigtech. Creating big system of React components. Writing autotests for interface components.',
     skills: ['react', 'redux', 'vite', 'git', 'csharp', 'nodejs', 'eslint', 'swagger', 'nextjs', 'figma'],
