@@ -6,32 +6,29 @@ import React, { FC } from 'react';
 export const Project: FC<ProjectType> = ({ link, image, title, description, date, skills }) => {
   return (
     <ScrollAnimateContainer>
-      <ShadowBox component="li" sx={{ listStyle: 'none', p: { xs: '24px 20px', sm: '34px 40px' } }}>
+      <ShadowBox component="li" sx={{ listStyle: 'none', p: { xs: '24px 20px', sm: '30px' } }}>
         <Row
           component="article"
           gap="30px"
           alignItems={'flex-start'}
           sx={{
-            flexWrap: 'nowrap',
+            flexWrap: { xs: 'wrap', md: 'nowrap' },
             justifyContent: 'flex-start',
-            '@media (max-width: 800px)': { flexWrap: 'wrap', justifyContent: 'center' },
           }}
         >
-          <Link href={link} target={'_blank'}>
-            <Box
-              sx={{
-                justifySelf: 'center',
-                maxWidth: '400px',
-                width: '400px',
-                aspectRatio: '2/1.5',
-                borderRadius: '20px',
-                backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                cursor: 'pointer',
-              }}
-            />
-          </Link>
+          <Box
+            sx={{
+              justifySelf: 'center',
+              minWidth: { xs: '100%', md: '380px' },
+              width: { xs: '100%', md: '380px' },
+              height: '250px',
+              borderRadius: '20px',
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              cursor: 'pointer',
+            }}
+          />
 
           <Stack alignItems="flex-start">
             <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>

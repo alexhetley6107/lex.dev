@@ -1,4 +1,4 @@
-import { Icon, JobType, Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
+import { Icon, JobType, Row, ScrollAnimateContainer, ShadowBox, Text } from '@/shared';
 import { Box, Stack } from '@mui/material';
 import React, { FC } from 'react';
 import CircleIcon from '@mui/icons-material/Circle';
@@ -12,7 +12,7 @@ export const JobItem: FC<Props> = ({ job, last }) => {
   return (
     <Box component="li" sx={{ position: 'relative', listStyle: 'none', ml: '40px' }}>
       <ScrollAnimateContainer>
-        <ShadowBox sx={{ p: { xs: '24px 20px', sm: '34px 40px' } }}>
+        <ShadowBox sx={{ p: { xs: '24px 20px', sm: '34px 30px' } }}>
           <Stack component="article" alignItems="flex-start">
             <ShadowBox sx={{ p: { xs: '2px 10px', sm: '5px 10px' }, mb: '15px' }}>
               <Text>{job.date}</Text>
