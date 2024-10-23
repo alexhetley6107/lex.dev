@@ -6,9 +6,9 @@ export const projects: ProjectType[] = [
     title: 'Cute Pizzas',
     date: 'April 2024',
     description:
-      'Pizzas delivery website. The site was built with Next.js, React, TypeScript, Node.js, Git, Tailwind CSS, and ESLint.',
+      'Modern e-commerce website for a pizza delivery service, featuring a modern interface, customizable pizza builder, and secure ordering system.',
     skills: ['nextjs', 'react', 'ts', 'nodejs', 'git', 'tailwind', 'eslint'],
     link: 'https://cute-pizzas.vercel.app/',
-    image: '/cute-pizzas.png',
+    image: '/images/cute_pizzas.png',
   },
 ];

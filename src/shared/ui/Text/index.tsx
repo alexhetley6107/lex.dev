@@ -11,6 +11,7 @@ export const Text: FC<Props> = ({ children, sx, component, ...props }) => {
         color: 'secondary.dark',
         m: 0,
         '& span': { color: 'primary.main' },
+        '*': { textDecoration: 'none' },
         ...sx,
       }}
       {...props}
