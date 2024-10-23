@@ -1,11 +1,8 @@
-import { Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
+import { Icon, ProjectType, Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
 import { Box, Stack } from '@mui/material';
 import React, { FC } from 'react';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
-type Props = {};
-
-export const Project: FC<Props> = () => {
+export const Project: FC<ProjectType> = ({ link, image, title, description, date, skills }) => {
   return (
     <ScrollAnimateContainer>
       <ShadowBox component="li" sx={{ listStyle: 'none', p: { xs: '20px', sm: '40px' } }}>
@@ -32,25 +29,18 @@ export const Project: FC<Props> = () => {
 
           <Stack alignItems="flex-start">
             <ShadowBox sx={{ p: '5px 10px', '@media (max-width: 600px)': { p: '2px 10px' }, mb: '15px' }}>
-              <Text>December 2022</Text>
+              <Text>{date}</Text>
             </ShadowBox>
             <Text sx={{ fontSize: '30px', '@media (max-width: 600px)': { fontSize: '24px' } }}>
-              <span>Adeart - Online Gift Shop</span>
+              <span>{title}</span>
             </Text>
-            <Text sx={{ my: '15px' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus ipsum officia neque atque nostrum
-              assumenda nam. Perferendis delectus est atque cum nihil eligendi eum, officia voluptates.
-            </Text>
+            <Text sx={{ my: '15px' }}>{description}</Text>
             <Row width={'50%'} gap="20px" justifyContent={'flex-start'}>
-              <ShadowCircle>
-                <InstagramIcon />
-              </ShadowCircle>
-              <ShadowCircle>
-                <InstagramIcon />
-              </ShadowCircle>
-              <ShadowCircle>
-                <InstagramIcon />
-              </ShadowCircle>
+              {skills.map((name, i) => (
+                <ShadowBox key={i} circle>
+                  <Icon name={name} />
+                </ShadowBox>
+              ))}
             </Row>
           </Stack>
         </Row>

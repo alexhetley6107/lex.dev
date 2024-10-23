@@ -1,9 +1,7 @@
-import { Icon, Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
+import { Icon, JobType, Row, ScrollAnimateContainer, ShadowBox, ShadowCircle, Text } from '@/shared';
 import { Box, Stack } from '@mui/material';
 import React, { FC } from 'react';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
-import { JobType } from './jobs';
 
 type Props = {
   job: JobType;

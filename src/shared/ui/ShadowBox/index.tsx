@@ -1,13 +1,12 @@
 'use client';
 import React, { FC } from 'react';
 import { Paper, PaperProps, useTheme } from '@mui/material';
-import { THEME_MODE } from '@/shared/enums';
+import { THEME_MODE } from '@/shared/types';
 
 const circleStyle = {
   borderRadius: '200px',
   width: { xs: '32px', sm: '44px' },
   height: { xs: '32px', sm: '44px' },
-
   padding: { xs: '4px', sm: '10px' },
 };
 

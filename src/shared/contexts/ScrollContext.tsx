@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext } from 'react';
-import { ANCHOR } from '../enums';
+import { ANCHOR } from '../types';
 
 interface IThemeState {
   isTop: boolean;

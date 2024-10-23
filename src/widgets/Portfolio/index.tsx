@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Box, Stack } from '@mui/material';
 import { ANCHOR, Text } from '@/shared';
 import { Project } from './Project';
+import { projects } from './projects';
 
 export const Portfolio: FC = () => {
   return (
@@ -10,9 +11,9 @@ export const Portfolio: FC = () => {
         My <span>Portfolio</span>
       </Text>
       <Stack component="ul" sx={{ p: 0, gap: { xs: '10px', sm: '20px' } }}>
-        <Project />
-        <Project />
-        <Project />
+        {projects.map((project, i) => (
+          <Project key={i} {...project} />
+        ))}
       </Stack>
     </Box>
   );
