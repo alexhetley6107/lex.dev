@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ANCHOR, Row, ShadowCircle, Text } from '@/shared';
+import { ANCHOR, getCurrentYear, Row, ShadowCircle, Text } from '@/shared';
 import { ShadowBox } from '@/shared/ui/ShadowBox';
 import Link from 'next/link';
 import { Box } from '@mui/material';
@@ -26,7 +26,7 @@ export const Contacts: FC = () => {
         </Row>
         <Row flexWrap={'wrap'} gap={'20px'}>
           <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 7 am to 7 pm (GMT+3).</Text>
-          <Text>© Aleksandr Bredun, 2024</Text>
+          <Text>© Aleksandr Bredun, {getCurrentYear()}</Text>
         </Row>
       </ShadowBox>
     </Box>
