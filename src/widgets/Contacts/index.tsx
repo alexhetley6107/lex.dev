@@ -25,7 +25,7 @@ export const Contacts: FC = () => {
           </Row>
         </Row>
         <Row flexWrap={'wrap'} gap={'20px'}>
-          <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 7 am to 7 pm (GMT+3).</Text>
+          <Text sx={{ wordWrap: 'nowrap' }}>Contact me. I am in touch mon-fri from 7 am to 7 pm (GMT+2).</Text>
           <Text>© Aleksandr Bredun, {getCurrentYear()}</Text>
         </Row>
       </ShadowBox>

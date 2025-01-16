@@ -11,4 +11,14 @@ export const projects: ProjectType[] = [
     link: 'https://cute-pizzas.vercel.app/',
     image: '/images/cute_pizzas.png',
   },
+  {
+    id: 2,
+    title: 'Snaker',
+    date: 'Septempber 2023',
+    description:
+      'A nostalgic remake of the iconic arcade game, where players control a hungry snake that grows as it consumes food pellets, avoiding obstacles and its own tail in a thrilling quest for survival.',
+    skills: ['html', 'css', 'react', 'ts', 'nodejs', 'git', 'eslint'],
+    link: 'https://snaker-nine.vercel.app/',
+    image: '/images/snaker.png',
+  },
 ];
