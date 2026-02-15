@@ -1,4 +1,3 @@
-import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MailIcon from '@mui/icons-material/Mail';
@@ -9,5 +8,4 @@ export const links = [
   { link: 'https://www.linkedin.com/in/aleksandr-bredun', Icon: LinkedInIcon },
   { link: 'https://telegram.me/lexhetley', Icon: TelegramIcon },
   { link: 'mailto:hetleyofficial@gmail.com', Icon: MailIcon },
-  { link: 'https://www.instagram.com/alhetley', Icon: InstagramIcon },
 ];

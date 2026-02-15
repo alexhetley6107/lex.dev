@@ -2,7 +2,7 @@ import { JobType } from '@/shared';
 
 export const jobs: JobType[] = [
   {
-    id: 4,
+    id: 3,
     title: 'Your Next Agency',
     date: 'May 2024 - Present',
     description:
@@ -10,25 +10,18 @@ export const jobs: JobType[] = [
     skills: ['react', 'ts', 'nodejs', 'vite', 'vue', 'storybook', 'git', 'tailwind', 'swagger', 'graphql', 'eslint'],
   },
   {
-    id: 3,
+    id: 2,
     title: 'Siema',
-    date: 'September 2022 - April 2024',
+    date: 'October 2022 - April 2024',
     description:
       'Development of the frontend part of projects in the field of e-commerce and bigtech. Creating big system of React components. Writing autotests for interface components.',
     skills: ['react', 'redux', 'vite', 'git', 'csharp', 'nodejs', 'eslint', 'swagger', 'nextjs', 'figma'],
   },
   {
-    id: 2,
-    title: 'Evrika',
-    date: 'March 2022 - August 2022',
-    description: "Development  of the frontend of the company's website.",
-    skills: ['html', 'scss', 'angular', 'ts', 'git', 'webpack'],
-  },
-  {
     id: 1,
     title: 'Freelance',
-    date: 'July 2021 - February 2022',
-    description: 'Website development. Fixing layout bugs. Writing simple scripts.',
+    date: 'February 2022 - September 2022',
+    description: 'Websites development.',
     skills: ['html', 'js', 'css', 'figma', 'webpack'],
   },
 ];
